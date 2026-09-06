@@ -49,3 +49,22 @@ yarn-error.log*
 /src/parttern/
 /src/04.jpg
 /src/BBA - Font/Aptos/
+/src/BBA - Font/**/*Italic*
+/src/BBA - Font/Aspira Wide/AspiraWide-Black*.ttf
+/src/BBA - Font/Aspira Wide/AspiraWide-Bold*.ttf
+/src/BBA - Font/Aspira Wide/AspiraWide-Demi*.ttf
+/src/BBA - Font/Aspira Wide/AspiraWide-Heavy*.ttf
+/src/BBA - Font/Aspira Wide/AspiraWide-It.ttf
+/src/BBA - Font/Aspira Wide/AspiraWide-Light*.ttf
+/src/BBA - Font/Aspira Wide/AspiraWide-Thin*.ttf
+/src/BBA - Font/Elvon Grotesk/ElvonGrotesk-Extra*.ttf
+/src/BBA - Font/Elvon Grotesk/ElvonGrotesk-Heavy*.ttf
+/src/BBA - Font/Elvon Grotesk/ElvonGrotesk-Light*.ttf
+/src/BBA - Font/Elvon Grotesk/ElvonGrotesk-Medium*.ttf
+/src/BBA - Font/Elvon Grotesk/ElvonGrotesk-Thin*.ttf
+/src/BBA - Font/Praktika/*Black*
+/src/BBA - Font/Praktika/*Condensed*
+/src/BBA - Font/Praktika/*Extended*
+/src/BBA - Font/Praktika/*Extra*
+/src/BBA - Font/Praktika/*Light*
+/src/BBA - Font/Praktika/*Italic*

@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "project": "Advisory Africa",
+    "framework": "Next.js + Bootstrap 5",
+    "identity": "African Professional Services",
+    "designSynthesis": "McKinsey authoritative serif typography + whitespace discipline, EY/Deloitte structured service cards and gold/navy prestige palette, PwC clean grid-based client segmentation — unified into a cohesive African professional services identity.",
+    "viewport": "desktop-first, mobile-responsive",
+    "layout": "long-scroll landing page with alternating dark navy and white full-width sections"
+  },
+  "brand": {
+    "name": "Advisory",
+    "tagline": "Shape the future by investing in professional advisory",
+    "region": "Pan-African",
+    "colors": {
+      "primary": "#050C1C",
+      "primarySoft": "#0A1628",
+      "navy": "#0B1B33",
+      "accent": "#D4AF37",
+      "accentSoft": "#C9A227",
+      "white": "#FFFFFF",
+      "offWhite": "#F7F8FA",
+      "muted": "#6B7280",
+      "border": "rgba(255,255,255,0.12)",
+      "borderLight": "rgba(11,27,51,0.08)",
+      "watermark": "rgba(11,27,51,0.04)"
+    },
+    "typography": {
+      "display": {
+        "family": "Cormorant Garamond",
+        "fallback": "Georgia, 'Times New Roman', serif",
+        "usage": "Hero H1, section titles, mission, testimonials, brand logo — McKinsey-style authoritative serif"
+      },
+      "body": {
+        "family": "DM Sans",
+        "fallback": "system-ui, sans-serif",
+        "usage": "Navigation, body copy, labels, stats, UI controls"
+      },
+      "scale": {
+        "hero": "clamp(2.75rem, 5vw, 4.25rem)",
+        "section": "clamp(2rem, 3.5vw, 3rem)",
+        "mission": "clamp(1.5rem, 2.5vw, 2.25rem)",
+        "stat": "clamp(2.5rem, 4vw, 3.5rem)",
+        "body": "1rem",
+        "label": "0.75rem"
+      }
+    },
+    "spacing": {
+      "sectionY": "5.5rem",
+      "sectionYLg": "7rem",
+      "containerMax": "1140px",
+      "whitespaceDiscipline": "Generous padding between sections; avoid dense stacking; McKinsey-style breathing room"
+    },
+    "radii": {
+      "pill": "9999px",
+      "card": "12px",
+      "image": "16px"
+    }
+  },
+  "navigation": {
+    "logo": "Advisory",
+    "links": [
+      { "label": "About Us", "href": "#about" },
+      {
+        "label": "Services",
+        "href": "#services",
+        "dropdown": ["Strategy", "Finance & Tax", "Legal Advisory", "Risk & Audit", "Digital Transformation"]
+      },
+      { "label": "Industries", "href": "#industries" },
+      { "label": "Team", "href": "#team" },
+      { "label": "Case Studies", "href": "#case-studies" },
+      { "label": "CONTACT", "href": "#contact", "style": "uppercase" }
+    ],
+    "style": {
+      "position": "absolute top overlay on hero",
+      "logoWeight": "serif bold",
+      "linkColor": "white",
+      "linkHover": "gold accent"
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "background": "primary navy with subtle abstract wave/glow pattern",
+      "layout": "two-column: left headline+CTA+social proof; right descriptive copy aligned bottom",
+      "headline": "Shape the future by investing in professional advisory",
+      "cta": { "label": "Talk Strategy", "href": "#contact", "variant": "white-pill" },
+      "socialProof": {
+        "avatars": 4,
+        "rating": 4.92,
+        "reviews": "200+",
+        "text": "4.92 (from 200+ reviews)"
+      },
+      "subtext": "Gain clarity, reduce risk, and make confident decisions with expert guidance in finance, law, tax, and strategy. Our team helps you turn complexity into opportunity — across Africa's fastest-growing markets."
+    },
+    {
+      "id": "stats",
+      "background": "white",
+      "layout": "4-column Bootstrap grid",
+      "metrics": [
+        { "label": "Average Optimized Resources", "value": "280K" },
+        { "label": "Average Revenue Growth", "value": "68%" },
+        { "label": "Client Retention Rate", "value": "95%" },
+        { "label": "Projects Completed", "value": "300+" }
+      ],
+      "style": {
+        "label": "uppercase, muted, small, letter-spacing",
+        "value": "large bold navy sans-serif"
+      }
+    },
+    {
+      "id": "mission",
+      "background": "white",
+      "watermark": "Advisory",
+      "text": "Our mission is to support lasting client success by applying economic insight, expert advisory, forward-thinking management, and a fresh, results-driven approach to business consulting — rooted in Africa's growth story.",
+      "style": "centered large serif paragraph, max-width ~820px"
+    },
+    {
+      "id": "about",
+      "background": "white",
+      "layout": "left copy + right/below wide boardroom image",
+      "badge": "About Us",
+      "heading": "We value your business as much as you do — that's why we deliver results",
+      "body": "We consistently pursue excellence, set ambitious goals, and deliver results. Offering a comprehensive range of consulting services across strategy, finance, tax, and law, we ensure your business's growth, resilience, and lasting protection in African and global markets.",
+      "cta": { "label": "Learn More", "href": "#services", "variant": "navy-pill" },
+      "image": {
+        "alt": "African professionals collaborating in a modern glass boardroom",
+        "src": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80",
+        "style": "wide, rounded, high-quality photography"
+      }
+    },
+    {
+      "id": "team",
+      "background": "white / off-white",
+      "heading": "Meet the experts that move businesses forward",
+      "layout": "4-column card grid (PwC-style clean grid)",
+      "members": [
+        {
+          "name": "Amara Okonkwo",
+          "role": "Senior Partner | Strategy & Markets",
+          "experience": "16 years of experience",
+          "image": "https://randomuser.me/api/portraits/women/44.jpg",
+          "linkedin": "#"
+        },
+        {
+          "name": "Kwame Mensah",
+          "role": "Senior Partner | Financial Law",
+          "experience": "15 years of experience",
+          "image": "https://randomuser.me/api/portraits/men/32.jpg",
+          "linkedin": "#"
+        },
+        {
+          "name": "Thandiwe Ndlovu",
+          "role": "Senior Partner | Tax and Audit",
+          "experience": "14 years of experience",
+          "image": "https://randomuser.me/api/portraits/women/68.jpg",
+          "linkedin": "#"
+        },
+        {
+          "name": "Omar El-Sayed",
+          "role": "Senior Partner | Finance",
+          "experience": "12 years of experience",
+          "image": "https://randomuser.me/api/portraits/men/75.jpg",
+          "linkedin": "#"
+        }
+      ],
+      "cardStyle": "grayscale headshot, name bold, role muted, experience small, LinkedIn icon"
+    },
+    {
+      "id": "value",
+      "background": "deep navy",
+      "heading": "The value behind every partnership is turning strategy into impact",
+      "layout": "structured EY/Deloitte-style service cards grid with thin borders",
+      "cards": [
+        {
+          "type": "partners",
+          "avatars": 4,
+          "label": "20+ Partners",
+          "span": "1"
+        },
+        {
+          "type": "insight",
+          "value": "78%",
+          "description": "Of businesses don't check their analytics.",
+          "span": "1"
+        },
+        {
+          "type": "investment",
+          "value": "$15K",
+          "description": "Average Investment",
+          "span": "1"
+        },
+        {
+          "type": "service",
+          "title": "Tailored Solutions",
+          "description": "Custom advisory frameworks for African enterprises navigating regulation, capital, and scale.",
+          "link": "Request More",
+          "span": "1"
+        },
+        {
+          "type": "service",
+          "title": "Focusing",
+          "description": "Sector depth across fintech, energy, mining, agribusiness, and public institutions.",
+          "link": "Explore Focus",
+          "span": "1"
+        }
+      ]
+    },
+    {
+      "id": "clients",
+      "background": "deep navy (continuation)",
+      "heading": "We help our clients to succeed faster and smarter",
+      "logos": ["Ebooks", "Hamilton", "SAVANNAH", "Nexus", "Apex Group", "Meridian"],
+      "style": "horizontal row of monochrome white logos, opacity ~0.7"
+    },
+    {
+      "id": "testimonial",
+      "background": "white",
+      "layout": "left large portrait, right serif quote + attribution",
+      "quote": "Their team helped us streamline our operations without disrupting day-to-day work. The process was smooth and results-driven.",
+      "author": "Adaobi Eze",
+      "title": "COO at Advanex Africa",
+      "portrait": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+      "relatedAvatars": 4
+    },
+    {
+      "id": "faq",
+      "background": "white",
+      "heading": "Frequently asked questions",
+      "component": "Bootstrap 5 accordion",
+      "items": [
+        {
+          "question": "What types of businesses do you work with?",
+          "answer": "We partner with startups, mid-market firms, and large enterprises across Africa — from Lagos fintechs to Johannesburg industrials and Nairobi agribusinesses — as well as multinational clients expanding into African markets."
+        },
+        {
+          "question": "How do you tailor your consulting services to each client?",
+          "answer": "Every engagement begins with a discovery diagnostic. We map your market context, regulatory landscape, and growth goals, then assemble a cross-functional team spanning strategy, finance, tax, and legal advisory."
+        },
+        {
+          "question": "What is the typical duration of a consulting engagement?",
+          "answer": "Engagements range from 6-week focused sprints to multi-year transformation partnerships. We define clear milestones, KPIs, and governance from day one so outcomes remain measurable."
+        },
+        {
+          "question": "Do you support cross-border and pan-African expansion?",
+          "answer": "Yes. Our network spans West, East, Southern, and North Africa. We advise on market entry, tax structuring, compliance, partnerships, and capital strategy across jurisdictions."
+        },
+        {
+          "question": "How do we get started?",
+          "answer": "Book a strategy conversation. We'll align on priorities, outline a recommended scope, and propose a clear path from insight to impact — with transparent investment ranges."
+        }
+      ]
+    },
+    {
+      "id": "footerCta",
+      "background": "navy",
+      "heading": "Ready to Accelerate growth? Start here.",
+      "cta": { "label": "Book an Appointment", "href": "#contact", "variant": "white-pill" },
+      "layout": "flex space-between: heading left, button right"
+    },
+    {
+      "id": "footer",
+      "background": "primary",
+      "columns": [
+        {
+          "title": "Advisory",
+          "text": "Pan-African professional services in strategy, finance, tax, and law."
+        },
+        {
+          "title": "Services",
+          "links": ["Strategy", "Finance & Tax", "Legal Advisory", "Risk & Audit"]
+        },
+        {
+          "title": "Industries",
+          "links": ["Fintech", "Energy", "Mining", "Agribusiness", "Public Sector"]
+        },
+        {
+          "title": "Contact",
+          "links": ["Lagos", "Nairobi", "Johannesburg", "Cairo", "hello@advisory.africa"]
+        }
+      ],
+      "copyright": "© 2026 Advisory. All rights reserved."
+    }
+  ],
+  "motion": [
+    { "target": "hero headline", "effect": "fade-up on load, 0.6s" },
+    { "target": "stats values", "effect": "subtle count-up or fade-in on scroll" },
+    { "target": "value cards", "effect": "staggered fade-up on scroll" }
+  ],
+  "bootstrapUsage": {
+    "grid": "container, row, col-*, g-*",
+    "nav": "navbar, navbar-expand-lg, dropdown",
+    "accordion": "accordion, accordion-item, accordion-button, accordion-collapse",
+    "utilities": "d-flex, align-items-*, justify-content-*, gap-*, text-*, py-*, px-*"
+  },
+  "agentInstructions": {
+    "priority": "Match this JSON and the uploaded mockup section-for-section. Preserve alternating navy/white rhythm, serif display headings, pill CTAs, watermark mission, grayscale team grid, bordered navy value cards, FAQ accordion, and footer CTA.",
+    "doNot": [
+      "Replace navy/gold with purple gradients",
+      "Use Inter/Roboto as primary fonts",
+      "Add cluttered pill clusters or floating badges over hero media",
+      "Convert structured cards into dense dashboard widgets"
+    ],
+    "africanIdentity": "Use African professional names, pan-African city references, and sector language (fintech, energy, mining, agribusiness) while keeping the visual system identical to the prestige consulting mockup."
+  }
+}

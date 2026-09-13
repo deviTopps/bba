@@ -5,15 +5,7 @@ import Image from "next/image";
 import AnimeReveal from "@/components/anime/AnimeReveal";
 import { IconEnvelope, IconGlobe, IconPhone } from "@/components/icons";
 import { contactPage } from "@/data/contact";
-import { siteData } from "@/data/site";
-
-const servicesNav = siteData.navigation.find(
-  (item) => "megaLinks" in item && item.mega
-);
-const servicesMega = {
-  megaLinks:
-    servicesNav && "megaLinks" in servicesNav ? servicesNav.megaLinks : [],
-};
+import { servicePages } from "@/data/services-catalog";
 
 type FormStatus = "idle" | "sending" | "sent" | "fallback" | "invalid";
 
@@ -23,6 +15,7 @@ function mailtoUrl(
   fromEmail: string,
   organisation: string,
   service: string,
+  subservices: string[],
   message: string
 ) {
   const lines = [
@@ -30,6 +23,7 @@ function mailtoUrl(
     `Email: ${fromEmail}`,
     organisation ? `Organisation: ${organisation}` : "",
     service ? `Service: ${service}` : "",
+    subservices.length ? `Sub-services: ${subservices.join(", ")}` : "",
     "",
     message,
   ].filter((line) => line !== "");
@@ -41,6 +35,22 @@ function mailtoUrl(
 export default function ContactContent() {
   const { hero, intro, email, website, phones, form } = contactPage;
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedSubservices, setSelectedSubservices] = useState<string[]>([]);
+  const selectedServiceData = servicePages.find(
+    (service) => service.title === selectedService
+  );
+  const subserviceOptions =
+    selectedServiceData?.spec?.find((row) => row.label === "Core Services")
+      ?.items ?? [];
+
+  const toggleSubservice = (subservice: string) => {
+    setSelectedSubservices((current) =>
+      current.includes(subservice)
+        ? current.filter((item) => item !== subservice)
+        : [...current, subservice]
+    );
+  };
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -50,6 +60,10 @@ export default function ContactContent() {
     const fromEmail = String(data.get("email") ?? "").trim();
     const organisation = String(data.get("organisation") ?? "").trim();
     const service = String(data.get("service") ?? "").trim();
+    const subservices = data
+      .getAll("subservices")
+      .map((value) => String(value).trim())
+      .filter(Boolean);
     const message = String(data.get("message") ?? "").trim();
     const companyWebsite = String(data.get("company_website") ?? "").trim();
 
@@ -64,6 +78,7 @@ export default function ContactContent() {
           email: fromEmail,
           organisation,
           service,
+          subservices,
           message,
           company_website: companyWebsite,
         }),
@@ -77,6 +92,8 @@ export default function ContactContent() {
       if (result.ok) {
         setStatus("sent");
         formEl.reset();
+        setSelectedService("");
+        setSelectedSubservices([]);
         return;
       }
 
@@ -92,6 +109,7 @@ export default function ContactContent() {
         fromEmail,
         organisation,
         service,
+        subservices,
         message
       );
     } catch {
@@ -102,6 +120,7 @@ export default function ContactContent() {
         fromEmail,
         organisation,
         service,
+        subservices,
         message
       );
     }
@@ -206,15 +225,45 @@ export default function ContactContent() {
 
               <label className="contact-field">
                 <span>{form.serviceLabel}</span>
-                <select name="service" defaultValue="">
+                <select
+                  name="service"
+                  value={selectedService}
+                  onChange={(event) => {
+                    setSelectedService(event.target.value);
+                    setSelectedSubservices([]);
+                  }}
+                >
                   <option value="">{form.servicePlaceholder}</option>
-                  {servicesMega.megaLinks.map((item) => (
-                    <option key={item.href} value={item.label}>
-                      {item.label}
+                  {servicePages.map((service) => (
+                    <option key={service.slug} value={service.title}>
+                      {service.title}
                     </option>
                   ))}
                 </select>
               </label>
+
+              {selectedService ? (
+                <fieldset className="contact-subservices">
+                  <legend>Select sub-services</legend>
+                  <p className="contact-subservices-help">
+                    Select all that apply.
+                  </p>
+                  <div className="contact-subservices-options">
+                    {subserviceOptions.map((item) => (
+                      <label key={item.label} className="contact-subservice-option">
+                        <input
+                          type="checkbox"
+                          name="subservices"
+                          value={item.label}
+                          checked={selectedSubservices.includes(item.label)}
+                          onChange={() => toggleSubservice(item.label)}
+                        />
+                        <span>{item.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+              ) : null}
 
               <label className="contact-field">
                 <span>{form.messageLabel}</span>

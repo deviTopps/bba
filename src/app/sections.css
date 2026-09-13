@@ -1204,9 +1204,9 @@
 }
 
 .audience-card {
-  min-height: 18rem;
-  background: #fff;
-  border: 1px solid var(--color-border-light);
+  min-height: 21rem;
+  background: #0d1f2e;
+  border: 1px solid rgba(198, 146, 47, 0.28);
   border-radius: var(--radius-card);
   padding: 2.5rem 2rem 2.25rem;
   display: flex;
@@ -1218,7 +1218,7 @@
 }
 
 .audience-card:hover {
-  border-color: rgba(198, 146, 47, 0.45);
+  border-color: var(--color-gold);
   box-shadow: var(--shadow-card-hover);
   transform: translateY(-6px);
 }
@@ -1230,7 +1230,7 @@
   height: 3.25rem;
   flex-shrink: 0;
   border-radius: 50%;
-  border: 1.5px solid var(--color-slate);
+  border: 1.5px solid var(--color-gold);
   background: transparent;
   box-sizing: border-box;
 }
@@ -1252,7 +1252,7 @@
 
 .audience-card-title {
   margin: 0;
-  color: var(--color-primary);
+  color: #fff;
   font-family: var(--font-ui);
   font-size: clamp(1.15rem, 1.5vw, 1.32rem);
   font-weight: 700;
@@ -1261,7 +1261,7 @@
 
 .audience-card-desc {
   margin: 0;
-  color: var(--color-slate);
+  color: rgba(255, 255, 255, 0.78);
   font-size: clamp(0.98rem, 1.15vw, 1.08rem);
   line-height: 1.65;
 }
@@ -2277,6 +2277,7 @@
   color: var(--color-navy);
   font-size: clamp(2.45rem, 4.2vw, 3.55rem);
   max-width: none;
+  text-align: center;
 }
 
 .faq-accordion {

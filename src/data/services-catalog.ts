@@ -87,6 +87,7 @@ export const servicePages: ServicePage[] = [
         label: "Core Services",
         items: [
           { label: "Corporate Tax Planning & Compliance", icon: "bi-building" },
+          { label: "Tax Forecasting & Planning", icon: "bi-graph-up-arrow" },
           { label: "Personal Income Tax", icon: "bi-person" },
           { label: "Value Added Tax (VAT)", icon: "bi-receipt" },
           { label: "Transfer Pricing Advisory & Documentation", icon: "bi-arrow-left-right" },
@@ -109,7 +110,7 @@ export const servicePages: ServicePage[] = [
   },
   {
     slug: "advisory",
-    title: "Financial Advisory & Transaction",
+    title: "Financial Advisory & Transaction Services",
     titlePrefix: "Financial Advisory &",
     description:
       "To advise clients on complex financial transactions, capital decisions, business valuation, restructuring and investment strategy.",
@@ -222,25 +223,25 @@ export const servicePages: ServicePage[] = [
     title: "Management Consulting & Institutional Reform",
     titlePrefix: "Management Consulting &",
     description:
-      "To design and implement transformative strategies, organisational reforms, governance improvements and public sector development programmes.",
-    lead: "To design and implement transformative strategies, organisational reforms, governance improvements and public sector development programmes.",
+      "We help large private organisations in transition strengthen strategy, operating models, governance and execution, while supporting institutional reform where it matters.",
+    lead: "We help large private organisations in transition strengthen strategy, operating models, governance and execution, while supporting institutional reform where it matters.",
     image: "/stock/about-hero.jpg",
     spec: [
       {
         label: "Purpose",
-        body: "To design and implement transformative strategies, organisational reforms, governance improvements and public sector development programmes.",
+        body: "To help large private organisations in transition design and implement strategies, operating-model reforms, governance improvements and lasting institutional change.",
       },
       {
         label: "Core Services",
         items: [
-          { label: "Public Financial Management (PFM) Reform", icon: "bi-bank" },
           { label: "Strategic Planning", icon: "bi-signpost-split" },
           { label: "Organisational Design & Restructuring", icon: "bi-diagram-3" },
-          { label: "Institutional Capacity Building", icon: "bi-people" },
-          { label: "Performance Management Systems", icon: "bi-speedometer2" },
           { label: "Change Management", icon: "bi-arrow-repeat" },
           { label: "Business Process Optimisation", icon: "bi-gear" },
           { label: "Human Capital Advisory", icon: "bi-person-vcard" },
+          { label: "Performance Management Systems", icon: "bi-speedometer2" },
+          { label: "Institutional Capacity Building", icon: "bi-people" },
+          { label: "Public Financial Management (PFM) Reform", icon: "bi-bank" },
           { label: "Procurement Reform", icon: "bi-cart-check" },
           { label: "Regulatory Reform", icon: "bi-journal-check" },
           { label: "Public Sector Modernisation", icon: "bi-building" },
@@ -250,7 +251,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         label: "Competitive Advantage",
-        body: "The only African firm combining Big Four consulting rigour with deep African public sector experience and a genuine commitment to building local institutional capacity.",
+        body: "We combine private-sector transformation rigour with deep African institutional experience, helping leadership teams turn strategy into operating change while building lasting local capability.",
       },
     ],
   },

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { aspiraWide, elvonGrotesk, praktika } from "./fonts";
 import "./globals.css";
 import "./sections.css";

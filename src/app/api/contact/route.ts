@@ -8,12 +8,22 @@ type ContactBody = {
   email?: unknown;
   organisation?: unknown;
   service?: unknown;
+  subservices?: unknown;
   message?: unknown;
   company_website?: unknown;
 };
 
 function asText(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function asTextList(value: unknown) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter((item): item is string => typeof item === "string")
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .slice(0, 20);
 }
 
 export async function POST(request: Request) {
@@ -30,6 +40,7 @@ export async function POST(request: Request) {
   const email = asText(body.email);
   const organisation = asText(body.organisation);
   const service = asText(body.service);
+  const subservices = asTextList(body.subservices);
   const message = asText(body.message);
 
   if (name.length < 2 || !emailPattern.test(email) || message.length < 8) {
@@ -41,6 +52,7 @@ export async function POST(request: Request) {
     `Email: ${email}`,
     organisation ? `Organisation: ${organisation}` : "",
     service ? `Service: ${service}` : "",
+    subservices.length ? `Sub-services: ${subservices.join(", ")}` : "",
     "",
     message,
   ]
@@ -55,7 +67,14 @@ export async function POST(request: Request) {
       const response = await fetch(webhook, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, organisation, service, message }),
+        body: JSON.stringify({
+          name,
+          email,
+          organisation,
+          service,
+          subservices,
+          message,
+        }),
       });
       if (!response.ok) {
         return NextResponse.json({ ok: false, fallback: true }, { status: 502 });

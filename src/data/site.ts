@@ -26,7 +26,7 @@ export const siteData = {
         { label: "Assurance & Risk Management", href: "/services/audit" },
         { label: "Tax & Revenue Advisory", href: "/services/tax" },
         {
-          label: "Financial Advisory & Transaction",
+          label: "Financial Advisory & Transaction Services",
           href: "/services/advisory",
         },
         {
@@ -113,7 +113,7 @@ export const siteData = {
       },
       {
         id: "service-advisory",
-        title: "Financial Advisory & Transaction",
+        title: "Financial Advisory & Transaction Services",
         description:
           "Working capital, controls and ERP, joined to strategy, so growth is executed from Accra across the continent, not left in a slide deck.",
         image: "/stock/strategy-advisory.jpg",
@@ -123,7 +123,7 @@ export const siteData = {
         id: "service-public-sector",
         title: "Management Consulting & Institutional Reform",
         description:
-          "We design and implement strategies, organisational reforms, governance improvements and public sector development programmes.",
+          "For large private organisations in transition: strategy, operating-model reform, governance improvement and practical change delivery.",
         image: "/stock/about-hero.jpg",
         href: "/services/public-sector",
       },

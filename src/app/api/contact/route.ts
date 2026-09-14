@@ -9,6 +9,7 @@ type ContactBody = {
   organisation?: unknown;
   service?: unknown;
   subservices?: unknown;
+  questionnaire?: unknown;
   message?: unknown;
   company_website?: unknown;
 };
@@ -26,6 +27,27 @@ function asTextList(value: unknown) {
     .slice(0, 20);
 }
 
+type QuestionnaireAnswer = {
+  id: string;
+  question: string;
+  answer: string;
+};
+
+function asQuestionnaire(value: unknown): QuestionnaireAnswer[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .slice(0, 40)
+    .map((item) => {
+      if (!item || typeof item !== "object") return null;
+      const row = item as Record<string, unknown>;
+      const id = asText(row.id).slice(0, 20);
+      const question = asText(row.question).slice(0, 500);
+      const answer = asText(row.answer).slice(0, 5000);
+      return id && question && answer ? { id, question, answer } : null;
+    })
+    .filter((item): item is QuestionnaireAnswer => item !== null);
+}
+
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => null)) as ContactBody | null;
   if (!body) {
@@ -41,6 +63,7 @@ export async function POST(request: Request) {
   const organisation = asText(body.organisation);
   const service = asText(body.service);
   const subservices = asTextList(body.subservices);
+  const questionnaire = asQuestionnaire(body.questionnaire);
   const message = asText(body.message);
 
   if (name.length < 2 || !emailPattern.test(email) || message.length < 8) {
@@ -53,6 +76,12 @@ export async function POST(request: Request) {
     organisation ? `Organisation: ${organisation}` : "",
     service ? `Service: ${service}` : "",
     subservices.length ? `Sub-services: ${subservices.join(", ")}` : "",
+    questionnaire.length ? "\nQuestionnaire responses:" : "",
+    ...questionnaire.flatMap((item) => [
+      `${item.id}: ${item.question}`,
+      item.answer,
+      "",
+    ]),
     "",
     message,
   ]
@@ -73,6 +102,7 @@ export async function POST(request: Request) {
           organisation,
           service,
           subservices,
+          questionnaire,
           message,
         }),
       });

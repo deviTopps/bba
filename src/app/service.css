@@ -313,6 +313,7 @@
   font-size: clamp(1.85rem, 3.2vw, 2.55rem);
   font-weight: 700;
   letter-spacing: var(--tracking-display);
+  text-align: center;
 }
 
 .svc-caps-grid {
@@ -580,14 +581,20 @@
   text-transform: uppercase;
 }
 
+.svc-purpose-kicker,
+.svc-advantage-kicker {
+  text-align: center;
+}
+
 .svc-purpose-text {
-  margin: 0;
+  margin: 0 auto;
   max-width: 42rem;
   color: var(--color-navy);
   font-size: clamp(1.45rem, 2.6vw, 2.05rem);
   font-weight: 700;
   letter-spacing: var(--tracking-display);
   line-height: 1.35;
+  text-align: center;
 }
 
 .svc-advantage {
@@ -600,11 +607,12 @@
 }
 
 .svc-advantage-text {
-  margin: 0;
+  margin: 0 auto;
   max-width: 46rem;
   color: #fff;
   font-size: clamp(1.35rem, 2.4vw, 1.95rem);
   font-weight: 700;
   letter-spacing: var(--tracking-display);
   line-height: 1.35;
+  text-align: center;
 }

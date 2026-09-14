@@ -2,39 +2,15 @@
 
 import { type FormEvent, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import AnimeReveal from "@/components/anime/AnimeReveal";
 import { IconEnvelope, IconGlobe, IconPhone } from "@/components/icons";
 import { contactPage } from "@/data/contact";
 import { servicePages } from "@/data/services-catalog";
 
-type FormStatus = "idle" | "sending" | "sent" | "fallback" | "invalid";
-
-function mailtoUrl(
-  to: string,
-  name: string,
-  fromEmail: string,
-  organisation: string,
-  service: string,
-  subservices: string[],
-  message: string
-) {
-  const lines = [
-    `Name: ${name}`,
-    `Email: ${fromEmail}`,
-    organisation ? `Organisation: ${organisation}` : "",
-    service ? `Service: ${service}` : "",
-    subservices.length ? `Sub-services: ${subservices.join(", ")}` : "",
-    "",
-    message,
-  ].filter((line) => line !== "");
-  const subject = encodeURIComponent(`Consultation request from ${name}`);
-  const body = encodeURIComponent(lines.join("\n"));
-  return `mailto:${to}?subject=${subject}&body=${body}`;
-}
-
 export default function ContactContent() {
   const { hero, intro, email, website, phones, form } = contactPage;
-  const [status, setStatus] = useState<FormStatus>("idle");
+  const router = useRouter();
   const [selectedService, setSelectedService] = useState("");
   const [selectedSubservices, setSelectedSubservices] = useState<string[]>([]);
   const selectedServiceData = servicePages.find(
@@ -67,63 +43,19 @@ export default function ContactContent() {
     const message = String(data.get("message") ?? "").trim();
     const companyWebsite = String(data.get("company_website") ?? "").trim();
 
-    setStatus("sending");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email: fromEmail,
-          organisation,
-          service,
-          subservices,
-          message,
-          company_website: companyWebsite,
-        }),
-      });
-      const result = (await response.json()) as {
-        ok?: boolean;
-        fallback?: boolean;
-        error?: string;
-      };
-
-      if (result.ok) {
-        setStatus("sent");
-        formEl.reset();
-        setSelectedService("");
-        setSelectedSubservices([]);
-        return;
-      }
-
-      if (result.error === "invalid") {
-        setStatus("invalid");
-        return;
-      }
-
-      setStatus("fallback");
-      window.location.href = mailtoUrl(
-        email,
+    sessionStorage.setItem(
+      "bba-questionnaire-intake",
+      JSON.stringify({
         name,
-        fromEmail,
+        email: fromEmail,
         organisation,
         service,
         subservices,
-        message
-      );
-    } catch {
-      setStatus("fallback");
-      window.location.href = mailtoUrl(
-        email,
-        name,
-        fromEmail,
-        organisation,
-        service,
-        subservices,
-        message
-      );
-    }
+        message,
+        company_website: companyWebsite,
+      })
+    );
+    router.push("/questionnaire");
   };
 
   return (
@@ -228,6 +160,7 @@ export default function ContactContent() {
                 <select
                   name="service"
                   value={selectedService}
+                  required
                   onChange={(event) => {
                     setSelectedService(event.target.value);
                     setSelectedSubservices([]);
@@ -270,25 +203,9 @@ export default function ContactContent() {
                 <textarea name="message" rows={6} required />
               </label>
 
-              <button type="submit" className="contact-submit" disabled={status === "sending"}>
-                {status === "sending" ? form.sending : form.submit}
+              <button type="submit" className="contact-submit">
+                Continue to questionnaire
               </button>
-
-              {status === "sent" ? (
-                <p className="contact-form-status" role="status">
-                  {form.sent}
-                </p>
-              ) : null}
-              {status === "fallback" ? (
-                <p className="contact-form-status" role="status">
-                  {form.fallback}
-                </p>
-              ) : null}
-              {status === "invalid" ? (
-                <p className="contact-form-status" role="alert">
-                  {form.invalid}
-                </p>
-              ) : null}
             </form>
           </AnimeReveal>
         </div>

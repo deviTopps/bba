@@ -114,8 +114,10 @@
 .about-intro-media {
   position: relative;
   min-height: 28rem;
+  border-radius: 10px;
   overflow: hidden;
   background: #dfe3e8;
+  transition: box-shadow 0.28s ease, transform 0.28s ease;
 }
 
 .about-philosophy {
@@ -133,8 +135,16 @@
 .about-philosophy-media {
   position: relative;
   min-height: 28rem;
+  border-radius: 10px;
   overflow: hidden;
   background: #dfe3e8;
+  transition: box-shadow 0.28s ease, transform 0.28s ease;
+}
+
+.about-intro-media:hover,
+.about-philosophy-media:hover {
+  box-shadow: 0 14px 32px rgba(198, 146, 47, 0.3), 0 0 0 2px var(--color-gold);
+  transform: translateY(-4px);
 }
 
 .about-philosophy-copy {
@@ -271,11 +281,11 @@
 .about-value-icon {
   display: grid;
   place-items: center;
-  width: 3.15rem;
-  height: 3.15rem;
+  width: 4rem;
+  height: 4rem;
   margin-bottom: 1.15rem;
-  color: rgba(216, 228, 238, 0.95);
-  font-size: 1.85rem;
+  color: var(--color-gold);
+  font-size: 2.4rem;
 }
 
 .about-value-name {

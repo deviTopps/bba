@@ -276,6 +276,16 @@
   min-height: 20rem;
   padding: 2rem 1.65rem 1.85rem;
   background: var(--color-navy);
+  border: 1px solid transparent;
+  box-shadow: 0 8px 20px rgba(13, 31, 46, 0.14);
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+}
+
+.about-value-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+  background: #0d1f2e;
+  box-shadow: 0 16px 34px rgba(13, 31, 46, 0.25), 0 0 0 1px rgba(198, 146, 47, 0.2);
 }
 
 .about-value-icon {

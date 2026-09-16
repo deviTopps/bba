@@ -185,8 +185,8 @@
   right: clamp(1rem, 4vw, 3rem);
   z-index: 4;
   display: grid;
-  grid-template-columns: minmax(220px, 28%) 1fr;
-  min-height: min(72vh, 520px);
+  grid-template-columns: minmax(280px, 34%) minmax(0, 1fr);
+  min-height: min(72vh, 560px);
   max-height: calc(100vh - 5.25rem - env(safe-area-inset-top) - 2.5rem);
   background: #f4f5f7;
   border-radius: 4px;
@@ -381,6 +381,170 @@
   text-decoration: underline;
   text-decoration-color: var(--color-gold);
   text-decoration-color: var(--color-accent);
+}
+
+/* Services picker: service lines left, relevant sub-services right. */
+.mega-menu-services {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  padding: 1.75rem 1.25rem;
+  background: linear-gradient(180deg, #12293d 0%, #0d1f2e 100%);
+}
+
+.mega-menu-services-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.8rem 1.1rem;
+  color: var(--color-gold);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mega-menu-close-mobile-position {
+  display: none;
+}
+
+.mega-menu-service-list,
+.mega-menu-subservice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mega-menu-service-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.2rem;
+  overflow-y: auto;
+  padding-right: 0.15rem;
+}
+
+.mega-menu-service-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.85rem 0.8rem;
+  border: 0;
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.mega-menu-service-button:hover,
+.mega-menu-service-button:focus-visible,
+.mega-menu-service-button.is-selected {
+  border-left-color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  outline: none;
+}
+
+.mega-menu-service-arrow {
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mega-menu-service-button:hover .mega-menu-service-arrow,
+.mega-menu-service-button:focus-visible .mega-menu-service-arrow,
+.mega-menu-service-button.is-selected .mega-menu-service-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mega-menu-subservices {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.75rem 2.5rem 2rem;
+  background: #f4f5f7;
+}
+
+.mega-menu-subservices .mega-menu-main-head {
+  margin-bottom: 1.35rem;
+}
+
+.mega-menu-eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--color-gold);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mega-menu-subservices-content {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.mega-menu-subservice-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 2rem;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.mega-menu-subservice-list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--color-slate);
+  font-family: var(--font-ui);
+  font-size: 0.96rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.mega-menu-subservice-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.52rem;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.mega-menu-service-cta {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.45rem;
+  margin-top: 1.5rem;
+  color: var(--color-navy);
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: 0.28em;
+}
+
+.mega-menu-service-cta:hover,
+.mega-menu-service-cta:focus-visible {
+  color: var(--color-gold);
+  text-decoration: underline;
 }
 
 .nav-backdrop {

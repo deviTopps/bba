@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { servicePages } from "@/data/services-catalog";
 import { siteData } from "@/data/site";
 
 type MegaItem = (typeof siteData.navigation)[number] & {
@@ -28,6 +29,7 @@ function isDesktopNav() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [openMega, setOpenMega] = useState<string | null>(null);
+  const [selectedMegaService, setSelectedMegaService] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -45,15 +47,21 @@ export default function Navbar() {
   const closeAll = () => {
     setOpen(false);
     setOpenMega(null);
+    setSelectedMegaService(null);
   };
 
   const closeMega = () => {
     setOpenMega(null);
+    setSelectedMegaService(null);
     megaTriggerRef.current?.focus();
   };
 
   const toggleMega = (label: string) => {
-    setOpenMega((current) => (current === label ? null : label));
+    setOpenMega((current) => {
+      const next = current === label ? null : label;
+      if (!next) setSelectedMegaService(null);
+      return next;
+    });
     // Desktop mega is a separate overlay; mobile expands inside the drawer.
     if (isDesktopNav()) setOpen(false);
   };
@@ -106,6 +114,7 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false);
     setOpenMega(null);
+    setSelectedMegaService(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -280,9 +289,15 @@ export default function Navbar() {
 
       {megaItems.map((item) => {
         const isOpen = openMega === item.label;
-        const midpoint = Math.ceil(item.megaLinks.length / 2);
-        const leftLinks = item.megaLinks.slice(0, midpoint);
-        const rightLinks = item.megaLinks.slice(midpoint);
+        const activeService =
+          item.megaLinks.find((link) => link.href === selectedMegaService) ??
+          item.megaLinks[0];
+        const activeServicePage = servicePages.find(
+          (service) => service.title === activeService?.label
+        );
+        const subservices =
+          activeServicePage?.spec?.find((row) => row.label === "Core Services")
+            ?.items ?? [];
 
         return (
           <div
@@ -296,22 +311,46 @@ export default function Navbar() {
             aria-hidden={!isOpen}
             {...(!isOpen ? { inert: true } : {})}
           >
-            <div className="mega-menu-sidebar">
-              <div className="mega-menu-sidebar-top">
-                <span className="mega-menu-side-item is-active">{item.label}</span>
+            <div className="mega-menu-services">
+              <div className="mega-menu-services-head">
+                <span>{item.label}</span>
+                <button
+                  type="button"
+                  className="mega-menu-close mega-menu-close-mobile-position"
+                  aria-label={`Close ${item.label} menu`}
+                  onClick={closeMega}
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
               </div>
-              <Link
-                className="mega-menu-side-cta"
-                href={item.href}
-                onClick={closeAll}
-              >
-                {item.label} <span aria-hidden="true">→</span>
-              </Link>
+              <ul className="mega-menu-service-list" aria-label="Service lines">
+                {item.megaLinks.map((link) => {
+                  const isSelected = link.href === activeService?.href;
+                  return (
+                    <li key={link.href}>
+                      <button
+                        type="button"
+                        className={`mega-menu-service-button${isSelected ? " is-selected" : ""}`}
+                        aria-pressed={isSelected}
+                        onClick={() => setSelectedMegaService(link.href)}
+                        onMouseEnter={() => setSelectedMegaService(link.href)}
+                        onFocus={() => setSelectedMegaService(link.href)}
+                      >
+                        <span>{link.label}</span>
+                        <span className="mega-menu-service-arrow" aria-hidden="true">→</span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
 
-            <div className="mega-menu-main">
+            <div className="mega-menu-subservices">
               <div className="mega-menu-main-head">
-                <h2 className="mega-menu-title">{item.label}</h2>
+                <div>
+                  <p className="mega-menu-eyebrow">Sub-services</p>
+                  <h2 className="mega-menu-title">{activeService?.label}</h2>
+                </div>
                 <button
                   type="button"
                   className="mega-menu-close"
@@ -322,25 +361,21 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <div className="mega-menu-columns">
-                <ul className="mega-menu-col">
-                  {leftLinks.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} onClick={closeAll}>
-                        {link.label}
-                      </Link>
-                    </li>
+              <div className="mega-menu-subservices-content">
+                <ul className="mega-menu-subservice-list">
+                  {subservices.map((subservice) => (
+                    <li key={subservice.label}>{subservice.label}</li>
                   ))}
                 </ul>
-                <ul className="mega-menu-col">
-                  {rightLinks.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} onClick={closeAll}>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                {activeService ? (
+                  <Link
+                    className="mega-menu-service-cta"
+                    href={activeService.href}
+                    onClick={closeAll}
+                  >
+                    Explore {activeService.label} <span aria-hidden="true">→</span>
+                  </Link>
+                ) : null}
               </div>
             </div>
           </div>

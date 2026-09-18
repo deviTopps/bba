@@ -7,6 +7,7 @@ export type QuestionnaireQuestion = {
 export const serviceQuestionnaireTags: Record<string, string> = {
   "Tax & Revenue Advisory": "TAX",
   "Assurance & Risk Management": "ARM",
+  "Audit, Assurance & Risk Management": "ARM",
   "Financial Advisory & Transaction Services": "FAT",
   "Management Consulting & Institutional Reform": "MCI",
   "Technology & Digital Transformation": "TDT",

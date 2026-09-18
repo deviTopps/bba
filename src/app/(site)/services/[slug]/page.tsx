@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ServiceSpecContent from "@/components/ServiceSpecContent";
 import ServiceLanding from "@/components/ServiceLanding";
 import { getServicePage, servicePages } from "@/data/services-catalog";
+import { getSubserviceArea } from "@/data/subservices";
 import "../../../service.css";
 
 type PageProps = {
@@ -16,12 +17,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const service = getServicePage(slug);
+  const area = getSubserviceArea(slug);
   if (!service) {
     return { title: "Services | Bernard Bempong & Associates" };
   }
   return {
-    title: `${service.name ?? service.title} | Bernard Bempong & Associates`,
-    description: service.description,
+    title: `${area?.title ?? service.title} in Ghana | BBA`,
+    description: area?.summary.split(/(?<=\.)\s/)[0] ?? service.description,
   };
 }
 

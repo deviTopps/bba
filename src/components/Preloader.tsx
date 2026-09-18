@@ -65,7 +65,7 @@ export default function Preloader() {
           priority
         />
         <p className="page-preloader-tagline">
-          Transforming Africa. Redefining Excellence.
+          Chartered Accountants &amp; Management Consultant
         </p>
         <div className="page-preloader-spinner" aria-hidden="true" />
       </div>

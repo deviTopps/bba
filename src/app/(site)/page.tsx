@@ -5,6 +5,7 @@ import Positioning from "@/components/Positioning";
 import Approach from "@/components/Approach";
 import TaglineBanner from "@/components/TaglineBanner";
 import FAQ from "@/components/FAQ";
+import GeneralCallout from "@/components/GeneralCallout";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Approach />
       <TaglineBanner />
       <FAQ />
+      <GeneralCallout homepage />
     </main>
   );
 }

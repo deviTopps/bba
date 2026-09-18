@@ -2,12 +2,12 @@ export const siteData = {
   brand: {
     name: "Bernard Bempong & Associates",
     shortName: "BBA",
-    tagline: "Transforming Africa. Redefining Excellence.",
+    tagline: "Chartered Accountants & Management Consultant",
     taglineLockup: {
-      line1: "Transforming",
-      line2Navy: "Africa.",
-      line2Gold: "Redefining",
-      line3: "Excellence.",
+      line1: "Chartered Accountants",
+      line2Navy: "&",
+      line2Gold: "Management",
+      line3: "Consultant",
       image: "/stock/about-hero.jpg",
     },
     colors: {
@@ -23,7 +23,7 @@ export const siteData = {
       href: "/#services",
       mega: true,
       megaLinks: [
-        { label: "Assurance & Risk Management", href: "/services/audit" },
+        { label: "Audit, Assurance & Risk Management", href: "/services/audit" },
         { label: "Tax & Revenue Advisory", href: "/services/tax" },
         {
           label: "Financial Advisory & Transaction Services",
@@ -65,24 +65,24 @@ export const siteData = {
     slides: [
       {
         image: "/stock/hero-04.jpg",
-        headlineLine1: "Transforming Africa.",
-        headlineLine2: "Redefining Excellence.",
+        headlineLine1: "Insight That Moves",
+        headlineLine2: "Organisations Forward",
         description:
-          "From Accra, we apply audit, tax, working capital and public financial management so Ghanaian institutions and African growth markets can act on evidence, then take the work live.",
+          "We bring together audit, tax, financial management and advisory expertise to help organisations strengthen performance, manage risk and turn informed decisions into practical results.",
       },
       {
         image: "/stock/about-hero.jpg",
-        headlineLine1: "Built in Ghana.",
-        headlineLine2: "Ready for Africa.",
+        headlineLine1: "Clarity for Decisions.",
+        headlineLine2: "Confidence in Compliance.",
         description:
-          "Statutory reporting, internal controls and GRA tax positions, written so boards can decide and ministries can inspect.",
+          "We strengthen statutory reporting, internal controls and tax compliance—giving boards reliable insights and institutions the transparency required for effective oversight.",
       },
       {
         image: "/stock/strategy-advisory.jpg",
-        headlineLine1: "Design the future.",
-        headlineLine2: "Then go live.",
+        headlineLine1: "Transform with Purpose.",
+        headlineLine2: "Deliver with Confidence.",
         description:
-          "ERP, revenue assurance and institutional reform executed at the pace African organisations actually operate.",
+          "We combine ERP, revenue assurance and institutional transformation expertise to turn strategic priorities into practical, sustainable results.",
       },
     ],
     cta: "Request a Consultation",
@@ -97,7 +97,7 @@ export const siteData = {
     items: [
       {
         id: "service-audit",
-        title: "Assurance & Risk Management",
+        title: "Audit, Assurance & Risk Management",
         description:
           "Independent audit, readiness and statutory reporting that give investors, boards and regulators a basis they can inspect, then act on.",
         image: "/stock/about-intro.jpg",
@@ -123,7 +123,7 @@ export const siteData = {
         id: "service-public-sector",
         title: "Management Consulting & Institutional Reform",
         description:
-          "For large private organisations in transition: strategy, operating-model reform, governance improvement and practical change delivery.",
+          "To help organisations navigate change by designing and implementing effective strategies, operating models, governance improvements and institutional reforms.",
         image: "/stock/about-hero.jpg",
         href: "/services/public-sector",
       },
@@ -188,9 +188,9 @@ export const siteData = {
       },
     ],
     closing:
-      "Transforming Africa. Redefining Excellence. We prove that ambition with audit, tax, ERP, controls and public financial management, delivered in one accountable relationship.",
+      "Chartered Accountants & Management Consultant. We prove that ambition with audit, tax, ERP, controls and public financial management, delivered in one accountable relationship.",
     accessLead:
-      "One relationship: international professional discipline and Ghana specific capability. Audit readiness, VAT, working capital, revenue assurance, ERP and practical governance, with AI where it strengthens control, held to international standards.",
+      "One coordinated relationship. Integrated multidisciplinary capability. We bring together audit readiness, tax, working capital, revenue assurance, ERP and governance advisory, applying data and artificial intelligence where they strengthen control, insight and efficiency. Our work is delivered with professional discipline and aligned with applicable international standards.",
     access: [
       { label: "Accounting", icon: "/icons/accounting.svg" },
       { label: "Audit", icon: "/icons/audit.svg" },
@@ -203,7 +203,7 @@ export const siteData = {
     heading: "What Sets Us Apart",
     marketLabel: "Market Positioning",
     marketBody:
-      "Bernard Bempong & Associates competes in the premium segment of African professional services. International audit, tax and advisory discipline applied to Ghanaian problems such as GRA compliance, public financial management and ERP control, with African institutional knowledge that sits alongside, and often ahead of, Big Four regional offices.",
+      "Bernard Bempong & Associates is positioned as a multidisciplinary professional services firm supporting businesses and public institutions with complex financial, governance and transformation priorities. We combine professional discipline across audit, tax, risk, finance and advisory with practical institutional insight and technology-enabled implementation. This integrated approach enables us to address regulatory compliance, public financial management, revenue assurance, internal controls and enterprise systems through one coordinated relationship.",
     competitiveLabel: "Competitive Positioning",
     items: [
       {
@@ -277,40 +277,40 @@ export const siteData = {
   },
   faqs: [
     {
-      question: "What types of businesses do you work with?",
+      question: "What types of organisations do you work with?",
       answer:
-        "Ghanaian companies, ministries and development programmes that need audit readiness, VAT, working capital and public financial management, and African and international clients entering or expanding across the continent.",
+        "We work with privately owned businesses, corporate groups, public institutions and development organisations. Our clients range from growing enterprises strengthening their financial and operating foundations to established institutions addressing complex governance, risk, compliance, technology and transformation priorities.",
     },
     {
-      question: "How do you tailor your consulting services to each client?",
+      question: "How do you tailor your services to each client?",
       answer:
-        "Every engagement begins with a diagnostic of statutory reporting, tax exposure, controls and growth objectives. We then field a team covering audit, tax, finance and implementation, against a defined scope.",
+        "Every engagement begins with an understanding of the organisation’s objectives, operating environment, risks and existing capabilities. We then define the scope, approach, team and deliverables required to address the specific challenge, with clear responsibilities, timelines and measures of progress.",
     },
     {
-      question: "What is the typical duration of a consulting engagement?",
+      question: "What is the typical duration of an engagement?",
       answer:
-        "Focused sprints of about six weeks through to multi year transformation partnerships. Milestones, KPIs and governance are set on day one so progress is measurable and can be course corrected.",
+        "Engagement duration depends on the nature, complexity and scope of the assignment. A focused diagnostic or review may take several weeks, while implementation, transformation and managed-service engagements may extend over several months or longer. The expected timeline and key milestones are agreed before work begins.",
     },
     {
-      question: "Do you support cross border and pan African expansion?",
+      question: "Do you support cross-border expansion and international assignments?",
       answer:
-        "We advise on market entry, VAT and tax structuring, statutory reporting, partnerships and capital strategy across West, East, Southern and North Africa, with Ghana as the operating base.",
+        "Yes. We support organisations evaluating or pursuing cross-border growth through market-entry analysis, financial and tax advisory, governance, risk assessment, transaction support and operating-model design. Where an assignment requires jurisdiction-specific legal, tax, regulatory or assurance expertise, we work with appropriately qualified local professionals.",
     },
     {
       question: "How do we get started?",
       answer:
-        "Request a consultation. We agree priorities, recommend a scope, and set the path from analysis to implementation, with transparent investment ranges.",
+        "Contact us to arrange an initial consultation. We will discuss your objectives, understand the relevant context and determine whether our capabilities align with your requirements. Where appropriate, we will then provide a proposed scope, delivery approach, timeline and fee structure.",
     },
   ],
   footer: {
-    tagline: "Transforming Africa. Redefining Excellence.",
+    tagline: "Chartered Accountants & Management Consultant",
     legal:
-      "Bernard Bempong & Associates is a Ghana based professional services firm. The work covers audit readiness, statutory reporting, VAT and tax compliance, working capital, public financial management and practical governance. Member practices operate independently. © 2026 Bernard Bempong & Associates. All rights reserved.",
+      "Bernard Bempong & Associates is a firm of Chartered Accountants and Management Consultants providing services across Audit, Assurance and Risk Management; Tax and Revenue Advisory; Financial Advisory and Transaction Services; Management Consulting and Institutional Reform; Technology and Digital Transformation; Artificial Intelligence and Data Analytics; and Sustainability, ESG & Development Finance. © 2026 Bernard Bempong & Associates. All rights reserved.",
     blurb:
       "Ghana based professional services in audit, tax, advisory and technology, serving African institutions.",
     services: ["Strategy", "Finance & Tax", "Legal Advisory", "Risk & Audit"],
     industries: ["Fintech", "Energy", "Mining", "Agribusiness", "Public Sector"],
     contact: ["info@bernardbempong.com"],
-    copyright: "© 2026 Bernard Bempong & Associates. All rights reserved.",
+    copyright: "Bernard Bempong & Associates is a firm of Chartered Accountants and Management Consultants providing services across Audit, Assurance and Risk Management; Tax and Revenue Advisory; Financial Advisory and Transaction Services; Management Consulting and Institutional Reform; Technology and Digital Transformation; Artificial Intelligence and Data Analytics; and Sustainability, ESG & Development Finance. © 2026 Bernard Bempong & Associates. All rights reserved.",
   },
 } as const;

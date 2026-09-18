@@ -1,4 +1,5 @@
 "use client";
+import GeneralCallout from "@/components/GeneralCallout";
 
 import Image from "next/image";
 import AnimeReveal from "@/components/anime/AnimeReveal";
@@ -181,6 +182,7 @@ export default function AboutContent() {
       </section>
 
       <TaglineBanner id="about-brand-voice" />
+      <GeneralCallout />
     </div>
   );
 }

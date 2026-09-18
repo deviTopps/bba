@@ -4,7 +4,7 @@ import { contactPage } from "@/data/contact";
 import { siteData } from "@/data/site";
 
 const footerNav = [
-  { label: "Our services", href: "/#services" },
+  { label: "Our services", href: "/services" },
   { label: "Privacy & Cookies", href: "/privacy" },
   { label: "About Us", href: "/about" },
   { label: "News", href: "/insight" },
@@ -54,6 +54,16 @@ export default function Footer() {
         </div>
 
         <p className="footer-legal">{footer.legal}</p>
+        <section className="footer-disclaimer" aria-labelledby="footer-disclaimer-title">
+          <h2 id="footer-disclaimer-title">General Website Disclaimer</h2>
+          <p>
+            The information on this website is provided for general guidance and
+            does not constitute audit, tax, legal, investment or other professional
+            advice. The appropriate scope and advice depend on the client’s facts,
+            applicable laws and engagement terms. Please contact Bernard Bempong &
+            Associates before acting on any matter described on the website.
+          </p>
+        </section>
       </div>
     </footer>
   );

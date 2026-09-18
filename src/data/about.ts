@@ -9,19 +9,20 @@ export const aboutPage = {
     image: "/stock/about-intro.jpg",
     heading: "What We Do",
     paragraphs: [
-      "Bernard Bempong & Associates is a Ghana based professional services firm. Clients have one point of contact for audit readiness, statutory reporting, VAT and tax, working capital, internal controls and ERP, joined to strategy. That combination remains uncommon at our scale in Ghana.",
-      "We work with government agencies on public financial management, with companies on inventory, revenue assurance and GRA compliance, and with development sector organisations that need evidence and practical capability. That record is extending across Africa as delivery capacity grows.",
+      "Bernard Bempong & Associates is a firm of Chartered Accountants and Management Consultants. We help organisations strengthen financial discipline, improve performance and navigate complex transformation by integrating assurance, finance, tax, risk, technology and strategy.",
+      "Our work spans public institutions, private enterprises and development organisations. We support leaders in modernising financial management, strengthening governance and controls, protecting revenue, improving operations and building the capabilities required to sustain change.",
     ],
     cta: "Request a Consultation",
     ctaHref: "/contact",
   },
   philosophy: {
     title: "Corporate Philosophy",
-    heading: "Professional excellence and African transformation are the same assignment.",
+    heading: "Professional excellence and institutional transformation are inseparable.",
     image: "/stock/about-philosophy.jpg",
     paragraphs: [
-      "Transforming Africa. Redefining Excellence. The work that proves it is audit, VAT, internal controls, ERP and public financial management, implemented to a standard boards and ministries can inspect.",
-      "Every government, organisation and enterprise we serve can raise the quality of statutory reporting, revenue assurance and practical governance. We unlock that performance through disciplined analysis, clear strategy and systems that go live.",
+      "We believe professional services should do more than diagnose challenges or produce reports. They should strengthen institutions, improve performance and create measurable value.",
+      "Through audit, tax and revenue advisory, internal controls, technology transformation and public financial management, we help organisations move from insight to implementation. Our approach combines rigorous analysis, clear strategy and practical solutions designed to strengthen accountability, enhance decision-making and build institutional capability.",
+      "Our measure of success is the value our work enables: stronger governance, more reliable information, improved revenue and financial management, more effective systems and organisations better equipped to achieve their objectives.",
     ],
   },
   missionVision: {
@@ -29,12 +30,12 @@ export const aboutPage = {
     cards: [
       {
         title: "Mission",
-        body: "Improve African governance, financial systems and institutions by integrating professional excellence with technological innovation, and putting it to work.",
+        body: "To help businesses and public institutions address complex challenges, strengthen governance and financial systems, and transform organisational performance by combining professional expertise, technological innovation and practical implementation to create measurable value.",
         icon: "bi-flag",
       },
       {
         title: "Vision",
-        body: "Transforming Africa. Redefining Excellence. To be the professional services firm African boards and ministries inspect, trust and call when the work must go live.",
+        body: "To build a globally respected professional services institution that helps businesses and public institutions navigate complexity, transform performance and create enduring value.",
         icon: "bi-eye",
       },
     ],
@@ -44,32 +45,32 @@ export const aboutPage = {
     items: [
       {
         title: "Integrity",
-        body: "We give independent, honest professional opinions and hold client work to the highest ethical standard, regardless of pressure.",
+        body: "We act independently, communicate honestly and uphold rigorous ethical and professional standards, even under pressure.",
         icon: "bi-star",
       },
       {
         title: "Impact",
-        body: "We aim to leave every client stronger than we found them, not just compliant.",
+        body: "We focus on work that strengthens performance, improves decision-making and creates measurable value for our clients.",
         icon: "bi-hand-thumbs-up",
       },
       {
-        title: "Intelligence",
-        body: "We apply careful analysis and use technology and data to sharpen our advice.",
+        title: "Insight",
+        body: "We combine professional judgement, rigorous analysis, data and technology to develop clear, evidence-based advice.",
         icon: "bi-bar-chart-line",
       },
       {
-        title: "African Excellence",
-        body: "We are proud of our African roots and hold ourselves to global professional standards.",
+        title: "Excellence",
+        body: "We bring discipline, quality and attention to detail to every engagement, continually improving how we work and the value we deliver.",
         icon: "bi-award",
       },
       {
         title: "Courage",
-        body: "We give clients direct, evidence based advice, even when it is not the easy answer.",
+        body: "We provide direct, evidence-based advice, challenge assumptions constructively and address difficult issues with professional objectivity.",
         icon: "bi-shield",
       },
       {
-        title: "Long Term Thinking",
-        body: "We build long term relationships and invest in work that is built to last, not just this quarter's deliverable.",
+        title: "Long-Term Perspective",
+        body: "We build enduring relationships and develop practical solutions that strengthen institutional capability beyond the immediate engagement.",
         icon: "bi-graph-up-arrow",
       },
     ],
@@ -77,41 +78,41 @@ export const aboutPage = {
   purpose: {
     title: "Our Purpose",
     image: "/stock/about-purpose.jpg",
-    text: "Improve African governance, financial systems and institutions by integrating professional excellence with technological innovation, and putting it to work.",
+    text: "To strengthen the institutions that drive economic and social progress. We help businesses and public institutions improve governance, modernise financial systems and enhance performance by combining professional expertise, technological innovation and practical implementation.",
     cta: "Request a Consultation",
     ctaHref: "/contact",
   },
   strategic: {
-    title: "Strategic Identity",
-    heading: "Four forces reshaping Africa's professional services landscape",
+    title: "Our Strategic Position",
+    heading: "Four forces shaping the future of organisations and professional services",
     intro:
-      "Bernard Bempong & Associates works at the intersection of four forces now reshaping professional services in Ghana and across Africa.",
+      "Bernard Bempong & Associates operates at the intersection of four forces transforming how businesses and public institutions govern, make decisions, modernise operations and create value.",
     pillars: [
       {
-        title: "Digital Governance",
+        title: "Digital Transformation and Governance",
         description:
-          "African states are moving public financial management onto data driven systems. We design the controls and implement the shift.",
+          "Strengthening processes, controls and accountability as organisations modernise their systems and operations.",
         image: "/stock/strategy-digital.jpg",
         icon: "bi-hdd-network",
       },
       {
         title: "Integrated Advisory",
         description:
-          "Boards require audit, tax, ERP and strategy in one engagement. We deliver that combination with evidence.",
+          "Bringing together assurance, finance, tax, risk, strategy and technology to address interconnected organisational challenges.",
         image: "/stock/strategy-advisory.jpg",
         icon: "bi-layers",
       },
       {
-        title: "AI Reform",
+        title: "AI and Data-Driven Transformation",
         description:
-          "Advanced analytics and AI are automating public sector and enterprise systems. We put them into production with control.",
+          "Applying artificial intelligence, analytics and automation to improve insight, decision-making and operational performance.",
         image: "/stock/strategy-ai.jpg",
         icon: "bi-cpu",
       },
       {
-        title: "Fiscal Accountability",
+        title: "Financial and Fiscal Accountability",
         description:
-          "Revenue assurance and compliance rise when infrastructure, internal controls and reporting are built to be inspected. We build those systems.",
+          "Strengthening financial management, revenue assurance, reporting, compliance and stewardship across private and public institutions.",
         image: "/stock/strategy-fiscal.jpg",
         icon: "bi-bank",
       },

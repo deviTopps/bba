@@ -3,6 +3,7 @@
 import { type FormEvent, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import EnquiryNotice from "@/components/EnquiryNotice";
 import { useRouter } from "next/navigation";
 import {
   serviceQuestionnaireTags,
@@ -219,6 +220,7 @@ export default function QuestionnaireContent() {
               </section>
             ) : null}
 
+            <EnquiryNotice />
             <button type="submit" className="contact-submit" disabled={status === "sending"}>
               {status === "sending" ? "Submitting…" : "Submit questionnaire"}
             </button>

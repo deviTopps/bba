@@ -1,5 +1,15 @@
 /* Section-specific styles. Prestige consulting aesthetic */
 
+.enquiry-notice { margin-top: 1.25rem; color: var(--color-slate); font-size: .88rem; line-height: 1.65; }
+.enquiry-notice p { margin: 0 0 .8rem; }
+.editorial-callout { padding: clamp(3rem, 6vw, 5rem) 0; background: #0d1f2e; color: #fff; text-align: center; }
+.editorial-callout h2 { max-width: 50rem; margin: 0 auto 1.25rem; font-size: clamp(1.8rem, 3vw, 2.7rem); }
+.editorial-callout p { max-width: 54rem; margin: 0 auto 1.5rem; line-height: 1.7; }
+.editorial-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; }
+.editorial-secondary { color: #fff; padding: 1rem 1.5rem; border: 1px solid var(--color-gold); border-radius: 999px; }
+.editorial-secondary:hover { color: var(--color-gold); }
+@media (max-width: 575.98px) { .editorial-actions a { width: 100%; white-space: normal; } }
+
 /*  Brand logos (JPEG on black → blend into dark surfaces)  */
 .brand-logo {
   width: auto;
@@ -122,6 +132,9 @@
 .nav-mobile-sub {
   display: none;
 }
+
+.nav-mobile-service-details summary { padding: .7rem 0; color: var(--color-navy); cursor: pointer; font-size: .9rem; }
+.nav-mobile-service-details ul { list-style: none; margin: 0; padding-left: 1rem; }
 
 .nav-list .nav-link {
   display: inline-flex;
@@ -405,6 +418,8 @@
   text-transform: uppercase;
 }
 
+.mega-menu-services-head a { color: inherit; text-underline-offset: .3em; }
+
 .mega-menu-close-mobile-position {
   display: none;
 }
@@ -525,6 +540,20 @@
   height: 0.35rem;
   border-radius: 50%;
   background: var(--color-gold);
+}
+
+.mega-menu-subservice-list a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 0.25em;
+}
+
+.mega-menu-subservice-list a:hover,
+.mega-menu-subservice-list a:focus-visible {
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
 }
 
 .mega-menu-service-cta {
@@ -701,6 +730,8 @@
   }
 
   .nav-panel.is-open {
+    max-height: calc(100dvh - 5rem);
+    overflow-y: auto;
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -2592,6 +2623,26 @@
   font-size: 0.9rem;
   line-height: 1.6;
   color: #8a939c;
+}
+
+.footer-disclaimer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-light);
+  color: var(--color-slate);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-disclaimer h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.footer-disclaimer p {
+  margin: 0;
 }
 
 .footer-right {

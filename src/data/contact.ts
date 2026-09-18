@@ -3,16 +3,15 @@ export const contactPage = {
     image: "/stock/about-hero.jpg",
   },
   intro:
-    "Reach the firm by email or telephone. We agree priorities and set the path from analysis to implementation.",
+    "Please provide the information below to help us prepare for the discussion. Submitting this form does not create a professional engagement. Any engagement will be subject to BBA’s client-acceptance procedures and an agreed engagement letter.",
   email: "info@bernardbempong.com",
   website: {
-    label: "www.bernardbempong.com",
-    href: "https://www.bernardbempong.com",
+    label: "www.bba.com.gh",
+    href: "https://www.bba.com.gh",
   },
   phones: [
-    { label: "+233 597 182 639", href: "tel:+233597182639" },
     { label: "+233 209 983 833", href: "tel:+233209983833" },
-    { label: "+233 558 383 979", href: "tel:+233558383979" },
+    { label: "+233 597 182 639", href: "tel:+233597182639" },
   ],
   form: {
     heading: "Message",

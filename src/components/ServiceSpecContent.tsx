@@ -3,10 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimeReveal from "@/components/anime/AnimeReveal";
+import AssessmentCallout from "@/components/AssessmentCallout";
+import ServiceCallout from "@/components/ServiceCallout";
 import type { ServicePage } from "@/data/services-catalog";
+import { getSubserviceArea } from "@/data/subservices";
 
 export default function ServiceSpecContent({ service }: { service: ServicePage }) {
   const spec = service.spec ?? [];
+  const area = getSubserviceArea(service.slug);
   const purpose = spec.find((row) => row.label === "Purpose");
   const core = spec.find((row) => row.label === "Core Services");
   const advantage = spec.find((row) => row.label === "Competitive Advantage");
@@ -38,12 +42,29 @@ export default function ServiceSpecContent({ service }: { service: ServicePage }
               service.title
             )}
           </h1>
-          <p className="svc-lead">{service.lead}</p>
+          <p className="svc-lead">{service.slug === "audit" || service.slug === "public-sector" ? service.lead : area?.tagline ?? service.lead}</p>
           <Link href="/contact" className="btn-pill btn-pill-gold">
             Request a Consultation
           </Link>
         </AnimeReveal>
       </section>
+
+      {area ? (
+        <section className="subservice-details" aria-labelledby="service-overview-title">
+          <div className="container-advisory service-area-overview">
+            <h2 id="service-overview-title">{area.title}</h2>
+            <p>{area.summary}</p>
+            <h3>Who We Serve</h3>
+            <p>{area.audience}</p>
+            <p className="subservice-industry-note">The industry references are illustrative and do not limit BBA’s ability to serve clients in other sectors.</p>
+            <ul className="subservice-related">
+              {area.services.map((item) => (
+                <li key={item.slug}><Link href={`/services/${service.slug}/${item.slug}`}>{item.title} <span aria-hidden="true">→</span></Link></li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       {purpose?.body ? (
         <section className="svc-purpose" aria-labelledby="svc-purpose-title">
@@ -86,6 +107,8 @@ export default function ServiceSpecContent({ service }: { service: ServicePage }
           </div>
         </section>
       ) : null}
+      {service.slug === "tax" || service.slug === "audit" ? <AssessmentCallout /> : null}
+      <ServiceCallout slug={service.slug} />
     </div>
   );
 }

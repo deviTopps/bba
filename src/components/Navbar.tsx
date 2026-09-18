@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { servicePages } from "@/data/services-catalog";
+import { getSubserviceArea } from "@/data/subservices";
 import { siteData } from "@/data/site";
 
 type MegaItem = (typeof siteData.navigation)[number] & {
@@ -233,6 +233,18 @@ export default function Navbar() {
                             <Link href={link.href} onClick={closeAll}>
                               {link.label}
                             </Link>
+                            {isMega ? (
+                              <details className="nav-mobile-service-details">
+                                <summary>View sub-services</summary>
+                                <ul>
+                                  {getSubserviceArea(link.href.split("/").pop() ?? "")?.services.map((service) => (
+                                    <li key={service.slug}>
+                                      <Link href={`${link.href}/${service.slug}`} onClick={closeAll}>{service.title}</Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </details>
+                            ) : null}
                           </li>
                         ))}
                       </ul>
@@ -292,12 +304,7 @@ export default function Navbar() {
         const activeService =
           item.megaLinks.find((link) => link.href === selectedMegaService) ??
           item.megaLinks[0];
-        const activeServicePage = servicePages.find(
-          (service) => service.title === activeService?.label
-        );
-        const subservices =
-          activeServicePage?.spec?.find((row) => row.label === "Core Services")
-            ?.items ?? [];
+        const subservices = getSubserviceArea(activeService?.href.split("/").pop() ?? "")?.services ?? [];
 
         return (
           <div
@@ -313,7 +320,7 @@ export default function Navbar() {
           >
             <div className="mega-menu-services">
               <div className="mega-menu-services-head">
-                <span>{item.label}</span>
+                <Link href="/services" onClick={closeAll}>All services</Link>
                 <button
                   type="button"
                   className="mega-menu-close mega-menu-close-mobile-position"
@@ -364,7 +371,11 @@ export default function Navbar() {
               <div className="mega-menu-subservices-content">
                 <ul className="mega-menu-subservice-list">
                   {subservices.map((subservice) => (
-                    <li key={subservice.label}>{subservice.label}</li>
+                    <li key={subservice.slug}>
+                      <Link href={`${activeService.href}/${subservice.slug}`} onClick={closeAll}>
+                        {subservice.title}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
                 {activeService ? (

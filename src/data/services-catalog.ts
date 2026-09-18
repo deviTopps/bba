@@ -34,16 +34,16 @@ export type ServicePage = {
 export const servicePages: ServicePage[] = [
   {
     slug: "audit",
-    title: "Assurance & Risk Management",
-    titlePrefix: "Assurance &",
+    title: "Audit, Assurance & Risk Management",
+    titlePrefix: "Audit, Assurance &",
     description:
-      "Independent, high quality assurance that financial information is reliable, internal controls are effective, and organisational risks are identified and managed.",
-    lead: "To provide independent, high quality assurance that financial information is reliable, internal controls are effective, and organisational risks are identified and managed.",
+      "To provide independent assurance that enhances confidence in financial information, supports the assessment of internal controls, and helps organisations identify and manage risk.",
+    lead: "To provide independent assurance that enhances confidence in financial information, supports the assessment of internal controls, and helps organisations identify and manage risk.",
     image: "/stock/about-intro.jpg",
     spec: [
       {
         label: "Purpose",
-        body: "To provide independent, high quality assurance that financial information is reliable, internal controls are effective, and organisational risks are identified and managed.",
+        body: "To provide independent assurance that enhances confidence in financial information, supports the assessment of internal controls, and helps organisations identify and manage risk.",
       },
       {
         label: "Core Services",
@@ -66,7 +66,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         label: "Competitive Advantage",
-        body: "The only firm in Ghana combining IFRS external audit capability with IPSAS public sector expertise, IT audit and forensic investigation in a single, fully integrated team.",
+        body: "We bring together external audit, IFRS and IPSAS expertise, IT audit and forensic investigation capabilities through a coordinated, multidisciplinary team.",
       },
     ],
   },
@@ -223,13 +223,13 @@ export const servicePages: ServicePage[] = [
     title: "Management Consulting & Institutional Reform",
     titlePrefix: "Management Consulting &",
     description:
-      "We help large private organisations in transition strengthen strategy, operating models, governance and execution, while supporting institutional reform where it matters.",
-    lead: "We help large private organisations in transition strengthen strategy, operating models, governance and execution, while supporting institutional reform where it matters.",
+      "To help organisations navigate change by designing and implementing effective strategies, operating models, governance improvements and institutional reforms.",
+    lead: "To help organisations navigate change by designing and implementing effective strategies, operating models, governance improvements and institutional reforms.",
     image: "/stock/about-hero.jpg",
     spec: [
       {
         label: "Purpose",
-        body: "To help large private organisations in transition design and implement strategies, operating-model reforms, governance improvements and lasting institutional change.",
+        body: "To help organisations navigate change by designing and implementing effective strategies, operating models, governance improvements and institutional reforms.",
       },
       {
         label: "Core Services",
@@ -251,7 +251,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         label: "Competitive Advantage",
-        body: "We combine private-sector transformation rigour with deep African institutional experience, helping leadership teams turn strategy into operating change while building lasting local capability.",
+        body: "We combine transformation expertise with practical institutional insight to help leadership teams translate strategy into operational improvements and strengthen internal capabilities.",
       },
     ],
   },

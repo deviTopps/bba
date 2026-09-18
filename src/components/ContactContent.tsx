@@ -1,6 +1,7 @@
 "use client";
 
-import { type FormEvent, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
+import EnquiryNotice from "@/components/EnquiryNotice";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import AnimeReveal from "@/components/anime/AnimeReveal";
@@ -12,6 +13,10 @@ export default function ContactContent() {
   const { hero, intro, email, website, phones, form } = contactPage;
   const router = useRouter();
   const [selectedService, setSelectedService] = useState("");
+  const [enquiry, setEnquiry] = useState("");
+  useEffect(() => {
+    setEnquiry(new URLSearchParams(window.location.search).get("enquiry")?.slice(0, 200) ?? "");
+  }, []);
   const [selectedSubservices, setSelectedSubservices] = useState<string[]>([]);
   const selectedServiceData = servicePages.find(
     (service) => service.title === selectedService
@@ -40,7 +45,7 @@ export default function ContactContent() {
       .getAll("subservices")
       .map((value) => String(value).trim())
       .filter(Boolean);
-    const message = String(data.get("message") ?? "").trim();
+    const message = [enquiry, String(data.get("message") ?? "").trim()].filter(Boolean).join("\n\n");
     const companyWebsite = String(data.get("company_website") ?? "").trim();
 
     sessionStorage.setItem(
@@ -134,6 +139,7 @@ export default function ContactContent() {
 
             <form className="contact-form" onSubmit={onSubmit}>
               <h2 className="contact-form-heading">{form.heading}</h2>
+              {enquiry ? <p>{enquiry}</p> : null}
 
               <label className="contact-honeypot" aria-hidden="true">
                 Company website
@@ -203,6 +209,7 @@ export default function ContactContent() {
                 <textarea name="message" rows={6} required />
               </label>
 
+              <EnquiryNotice />
               <button type="submit" className="contact-submit">
                 Continue to questionnaire
               </button>

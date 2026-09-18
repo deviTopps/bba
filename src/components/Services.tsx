@@ -184,8 +184,8 @@ export default function Services() {
         </div>
 
         <AnimeReveal className="services-all-wrap" y={16} stagger={0}>
-          <Link href={servicesSection.ctaHref} className="services-all-btn">
-            {servicesSection.cta} <span aria-hidden="true">›</span>
+          <Link href="/services" className="services-all-btn">
+            Explore All Services <span aria-hidden="true">›</span>
           </Link>
         </AnimeReveal>
       </div>

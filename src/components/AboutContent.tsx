@@ -6,6 +6,12 @@ import AnimeReveal from "@/components/anime/AnimeReveal";
 import TaglineBanner from "@/components/TaglineBanner";
 import { aboutPage } from "@/data/about";
 
+const team = [
+  { name: "Bernard Bempong", initials: "BB", qualifications: "CA (Ghana), BSc, MBA Finance – In Progress", role: "Managing Partner" },
+  { name: "Latifa Al-Razak", initials: "LA", qualifications: "ATA/UFTAA Advanced", role: "Executive Assistant" },
+  { name: "Lois Bempong", initials: "LB", qualifications: "BA, MBA, CHIRM-Level III", role: "Chief Administrative Officer" },
+];
+
 export default function AboutContent() {
   const { hero, intro, philosophy, missionVision, coreValues, purpose, strategic } = aboutPage;
 
@@ -153,31 +159,43 @@ export default function AboutContent() {
             <p className="about-strategy-intro">{strategic.intro}</p>
           </AnimeReveal>
           <AnimeReveal className="about-pillar-grid" y={22} selector=".about-pillar">
-            {strategic.pillars.map((pillar, index) => (
+            {strategic.pillars.map((pillar) => (
               <article key={pillar.title} className="about-pillar">
                 <div className="about-pillar-media">
                   <Image
                     src={pillar.image}
                     alt=""
-                    fill
+                    width={1200}
+                    height={800}
                     className="about-pillar-img"
                     sizes="(max-width: 767px) 100vw, 50vw"
                     quality={70}
                   />
                 </div>
                 <div className="about-pillar-body">
-                  <span className="about-pillar-index">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="about-pillar-icon" aria-hidden="true">
-                    <i className={`bi ${pillar.icon}`} />
-                  </span>
                   <h3 className="about-pillar-title">{pillar.title}</h3>
                   <p className="about-pillar-desc">{pillar.description}</p>
                 </div>
               </article>
             ))}
           </AnimeReveal>
+        </div>
+      </section>
+
+      <section className="about-team" id="our-team" aria-labelledby="about-team-heading">
+        <div className="container-advisory">
+          <p className="about-kicker">Our people</p>
+          <h2 className="about-heading font-display" id="about-team-heading">Meet Our Team</h2>
+          <div className="about-team-grid">
+            {team.map((person) => (
+              <article className="about-team-card" key={person.name}>
+                <span className="about-team-initials" aria-hidden="true">{person.initials}</span>
+                <h3>{person.name}</h3>
+                <p className="about-team-role">{person.role}</p>
+                <p className="about-team-qualifications">{person.qualifications}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

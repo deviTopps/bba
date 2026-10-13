@@ -25,13 +25,10 @@ export default function AssessmentForm({ speak, initialMatter = "" }: { speak: b
     setFallback(`mailto:${contactPage.email}?subject=${encodeURIComponent(service)}&body=${encodeURIComponent(text)}`);
     setStatus("sending");
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, organisation, service, subservices: [matter], message, company_website: data.get("company_website") }),
-      });
-      const result = await response.json();
-      if (response.ok && result.ok) { setStatus("sent"); form.reset(); }
-      else { setStatus(result.error === "invalid" ? "invalid" : "error"); }
+      const response = await fetch("/api/service/consultations", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, email, organisation, service, subservices: [matter], message, company_website: data.get("company_website") }) });
+      if (!response.ok) throw new Error("Submission failed");
+      setStatus("sent");
+      form.reset();
     } catch { setStatus("error"); }
   }
 
@@ -51,8 +48,9 @@ export default function AssessmentForm({ speak, initialMatter = "" }: { speak: b
       <label className="contact-field">Tell us about the matter and any deadlines<textarea name="message" minLength={8} rows={5} required /></label>
       <p className="assessment-note">{assessment.note}</p>
       <EnquiryNotice />
-      <button className="contact-submit" disabled={status === "sending"} type="submit">{status === "sending" ? "Sending…" : "Submit Assessment Request"}</button>
-      {status === "sent" && <p role="status">Thank you. BBA has received your request and will contact you about the next steps.</p>}
+      <button className="contact-submit" disabled={status === "sending"} type="submit">{status === "sending" ? "Sending…" : "Request Consultation"}</button>
+      {status === "sent" && <p role="status">Your consultation request has been received. BBA will contact you to confirm the next steps.</p>}
+      {status === "prepared" && <p role="status">Your request has not been sent. <a href={fallback}>Open your email app</a>, review the message and send it to BBA.</p>}
       {status === "invalid" && <p role="alert">Please enter your name, a valid email and at least eight characters describing the matter.</p>}
       {status === "error" && <p role="alert">Your request has not been sent. Please try again or <a href={fallback}>send your request by email</a>.</p>}
     </form>

@@ -9,7 +9,7 @@ import GeneralCallout from "@/components/GeneralCallout";
 
 export default function HomePage() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="home-page">
       <Hero />
       <Services />
       <Audience />

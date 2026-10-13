@@ -1,7 +1,5 @@
+import PageSkeleton from "@/components/PageSkeleton";
+
 export default function Loading() {
-  return (
-    <div className="route-loading" aria-live="polite" aria-busy="true">
-      <div className="route-loading-bar" />
-    </div>
-  );
+  return <main id="main-content"><PageSkeleton /></main>;
 }

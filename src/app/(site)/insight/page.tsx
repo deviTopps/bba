@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import InsightContent from "@/components/InsightContent";
-import { loadInsightPosts } from "@/sanity/lib/loadInsights";
+import PageSkeleton from "@/components/PageSkeleton";
+import { loadInsightPosts } from "@/data/loadInsights";
 import "../../insight.css";
 
 export const metadata: Metadata = {
@@ -13,14 +14,7 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 function InsightFallback() {
-  return (
-    <div className="insight-page" aria-busy="true">
-      <div className="container-advisory">
-        <div className="route-skeleton route-skeleton-title" />
-        <div className="route-skeleton route-skeleton-grid" />
-      </div>
-    </div>
-  );
+  return <PageSkeleton />;
 }
 
 export default async function InsightPage() {

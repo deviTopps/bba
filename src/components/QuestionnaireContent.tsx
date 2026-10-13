@@ -3,7 +3,9 @@
 import { type FormEvent, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { contactPage } from "@/data/contact";
 import EnquiryNotice from "@/components/EnquiryNotice";
+import PageSkeleton from "@/components/PageSkeleton";
 import { useRouter } from "next/navigation";
 import {
   serviceQuestionnaireTags,
@@ -23,7 +25,7 @@ type Intake = {
   company_website: string;
 };
 
-type FormStatus = "idle" | "sending" | "sent" | "fallback" | "invalid";
+type FormStatus = "idle" | "prepared" | "sending" | "sent";
 
 function readIntake(): Intake | null {
   try {
@@ -76,6 +78,7 @@ function renderQuestion(question: QuestionnaireQuestion) {
 
 export default function QuestionnaireContent() {
   const router = useRouter();
+  const [emailBody, setEmailBody] = useState("");
   const [intake, setIntake] = useState<Intake | null | undefined>(undefined);
   const [status, setStatus] = useState<FormStatus>("idle");
 
@@ -100,7 +103,7 @@ export default function QuestionnaireContent() {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!intake) return;
+    if (!intake || status === "sending") return;
     const data = new FormData(event.currentTarget);
     const questions = [...universalQuestions, ...conditionalQuestions];
     const questionnaire = questions.map((question) => ({
@@ -109,26 +112,17 @@ export default function QuestionnaireContent() {
       answer: String(data.get(question.id) ?? "").trim(),
     }));
 
+    setEmailBody(["Name: " + intake.name, "Email: " + intake.email, "Organisation: " + intake.organisation, "Service: " + intake.service, "Subservices: " + intake.subservices.join(", "), intake.message, ...questionnaire.map(item => item.id + ": " + item.question + "\n" + item.answer)].join("\n\n"));
     setStatus("sending");
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...intake, questionnaire }),
-      });
-      const result = (await response.json()) as { ok?: boolean; error?: string };
-      if (result.ok) {
-        sessionStorage.removeItem("bba-questionnaire-intake");
-        setStatus("sent");
-        return;
-      }
-      setStatus(result.error === "invalid" ? "invalid" : "fallback");
-    } catch {
-      setStatus("fallback");
-    }
+      const response = await fetch("/api/service/enquiries", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...intake, questionnaire }) });
+      if (!response.ok) throw new Error("Submission failed");
+      sessionStorage.removeItem("bba-questionnaire-intake");
+      setStatus("sent");
+    } catch { setStatus("prepared"); }
   };
 
-  if (!intake) return null;
+  if (!intake) return <main id="main-content"><PageSkeleton variant="form" standalone /></main>;
 
   return (
     <main id="main-content" className="questionnaire-page">
@@ -221,12 +215,11 @@ export default function QuestionnaireContent() {
             ) : null}
 
             <EnquiryNotice />
-            <button type="submit" className="contact-submit" disabled={status === "sending"}>
-              {status === "sending" ? "Submitting…" : "Submit questionnaire"}
+            <button type="submit" className="contact-submit" disabled={status === "sending" || status === "sent"}>
+              {status === "sending" ? "Submitting…" : status === "sent" ? "Submitted" : "Submit questionnaire"}
             </button>
-            {status === "sent" ? <p className="questionnaire-status" role="status">Thank you. Your questionnaire has been submitted.</p> : null}
-            {status === "fallback" ? <p className="questionnaire-status" role="alert">We could not submit your questionnaire. Please try again or contact us by email.</p> : null}
-            {status === "invalid" ? <p className="questionnaire-status" role="alert">Please complete all required answers before submitting.</p> : null}
+            {status === "sent" && <p role="status">Your enquiry and questionnaire have been received.</p>}
+            {status === "prepared" && <div className="questionnaire-status" role="status"><p>Your questionnaire has not been sent. Copy the text below into an email to <a href={"mailto:" + contactPage.email}>{contactPage.email}</a> and send it from your email app.</p><textarea aria-label="Prepared questionnaire email" readOnly value={emailBody} rows={10} style={{width: "100%"}} /></div>}
           </form>
         </div>
       </section>

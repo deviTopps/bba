@@ -1,0 +1,60 @@
+/* Dashboard density; leave the simplified sign-in page unchanged. */
+.sidebar-logo{display:block;width:100%;max-width:230px;height:auto;object-fit:contain;mix-blend-mode:screen}
+body:not(.login-view){font-size:14px}
+body:not(.login-view)>aside{width:190px;padding:24px 16px}
+body:not(.login-view) .brand{font-size:32px}
+body:not(.login-view) .brand small{font-size:9px;letter-spacing:2px;margin-top:5px}
+body:not(.login-view) nav{gap:5px;margin:28px 0}
+body:not(.login-view) main{padding:24px;max-width:1600px}
+body:not(.login-view) header{gap:12px;margin-bottom:18px;align-items:center}
+body:not(.login-view) h1{font-size:26px;margin:6px 0}
+body:not(.login-view) h2{font-size:18px;margin:8px 0}
+body:not(.login-view) header p{margin:5px 0;font-size:13px}
+body:not(.login-view) .eyebrow{font-size:10px;letter-spacing:1.5px}
+body:not(.login-view) button{padding:8px 12px;min-height:36px;border-radius:6px}
+body:not(.login-view) input,body:not(.login-view) select,body:not(.login-view) textarea{padding:9px 11px}
+body:not(.login-view) label{font-size:13px;margin:12px 0}
+body:not(.login-view) label input,body:not(.login-view) label select,body:not(.login-view) label textarea{margin-top:6px}
+body:not(.login-view) .metrics{gap:12px;margin-bottom:16px}
+body:not(.login-view) .panel,body:not(.login-view) .metrics article{padding:16px;border-radius:8px}
+body:not(.login-view) .metrics strong{font-size:26px;margin-top:8px}
+body:not(.login-view) .toolbar{gap:8px;margin:12px 0}
+body:not(.login-view) .toolbar form{gap:8px;min-width:180px}
+body:not(.login-view) .row{gap:12px;padding:12px 0}
+body:not(.login-view) .row>div{min-width:0;overflow-wrap:anywhere}
+body:not(.login-view) .row>button{flex-shrink:0}
+body:not(.login-view) .row p{margin:4px 0;font-size:12px;line-height:1.5}
+body:not(.login-view) .badge{padding:3px 8px;font-size:11px}
+body:not(.login-view) .pagination{gap:12px;margin:16px 0}
+body:not(.login-view) #message:empty{display:none}
+body:not(.login-view) #identity{font-size:12px;overflow-wrap:anywhere}
+body:not(.login-view) dialog{padding:20px;border-radius:10px;width:min(640px,95vw)}
+body:not(.login-view) pre{padding:12px;font-size:13px;line-height:1.6}
+@media(max-width:750px){
+  body:not(.login-view)>aside{width:auto;padding:16px}
+  body:not(.login-view) nav{margin:14px 0 0;gap:4px}
+  body:not(.login-view) main{padding:16px}
+  body:not(.login-view) header{align-items:flex-start;gap:6px}
+  body:not(.login-view) h1{font-size:24px}
+  body:not(.login-view) .metrics{gap:8px}
+  body:not(.login-view) .metrics article{padding:12px;font-size:12px}
+  body:not(.login-view) .metrics strong{font-size:23px}
+  body:not(.login-view) input,body:not(.login-view) select,body:not(.login-view) textarea{font-size:16px}
+}
+@media(pointer:coarse){body:not(.login-view) button{min-height:44px}}
+
+/* Shared dashboard header; hidden by the login layout. */
+body:not(.login-view) main{max-width:none}
+body:not(.login-view) header.dashboard-header{position:sticky;top:0;z-index:10;display:flex;flex-direction:row;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #e2e7eb;min-height:78px;margin:-24px -24px 24px;padding:14px 24px;gap:20px}
+.dashboard-title{min-width:0}
+.dashboard-label{font-size:9px;letter-spacing:1.6px;color:#8b7344}
+body:not(.login-view) .dashboard-header h1{font-size:21px;line-height:1.3;margin:5px 0 0}
+.dashboard-header-actions{display:flex;align-items:center;gap:18px;min-width:0}
+body:not(.login-view) .header-account{display:flex;align-items:center;gap:10px;padding:3px;border:0;background:none;text-align:left;min-width:0}
+.account-avatar{display:grid;place-items:center;width:34px;height:34px;flex-shrink:0;background:#f4eedf;color:#8c6927;border:1px solid #e9ddc3;border-radius:50%;font-size:11px;font-weight:700}
+.account-copy{display:grid;gap:4px;min-width:0}
+body:not(.login-view) .dashboard-header #identity{display:block;font-size:12px;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#account-role{font-size:10px;color:#82909a}
+body:not(.login-view) .header-signout{background:#fff;border-color:#dce3e8;font-size:12px;white-space:nowrap}
+body:not(.login-view) .header-signout:hover{background:#f5f7f8}
+@media(max-width:750px){body:not(.login-view) header.dashboard-header{margin:-16px -16px 18px;padding:12px 16px;gap:12px;min-height:72px}.dashboard-header-actions{gap:10px}body:not(.login-view) .dashboard-header h1{font-size:18px}.dashboard-label{font-size:8px;letter-spacing:1px}.account-copy{display:none}.account-avatar{width:32px;height:32px}}

@@ -3,9 +3,13 @@ export type InsightTopic = {
   label: string;
 };
 
-import type { PortableTextBlock } from "@portabletext/types";
+
 
 export type InsightPost = {
+  author?: { name: string; title?: string };
+  imageAlt?: string;
+  seoTitle?: string;
+  seoDescription?: string;
   slug: string;
   title: string;
   excerpt: string;
@@ -13,7 +17,6 @@ export type InsightPost = {
   topic: InsightTopic;
   publishedAt: string;
   paragraphs: string[];
-  body?: PortableTextBlock[];
 };
 
 export const insightTopics: InsightTopic[] = [

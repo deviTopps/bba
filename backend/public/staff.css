@@ -1,0 +1,18 @@
+#workspace:has(.staff-access)>.toolbar{display:none}
+.staff-toolbar{display:flex;justify-content:flex-end;margin-bottom:16px}
+.staff-table-scroll{overflow-x:auto}
+.staff-table{border-collapse:collapse;width:100%;text-align:left;font-size:13px}
+.staff-table th{font-size:11px;font-weight:600;color:#6a7883;background:#f8f9fa}
+.staff-table th,.staff-table td{padding:14px 16px;border-bottom:1px solid #e8ecef}
+.staff-table td:first-child{min-width:180px;overflow-wrap:anywhere}
+.staff-table td:last-child{text-align:right;white-space:nowrap}
+.staff-table tr:last-child td{border-bottom:0}
+.staff-table tbody tr:hover{background:#fafbfc}
+.staff-you{color:#7d8890;font-size:12px}
+body:not(.login-view) .staff-edit{background:none;border:0;color:#486274;padding:6px 10px;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+.staff-dialog{max-width:440px}
+.staff-dialog-email{overflow-wrap:anywhere;font-size:13px;color:#526774}
+.staff-help{font-size:12px;color:#74828c;line-height:1.5}
+.staff-dialog form>button{width:100%;margin-top:12px}
+.staff-dialog [role=status]{font-size:12px;color:#926525}
+@media(max-width:600px){.staff-table th,.staff-table td{padding:12px 10px}.staff-table{min-width:440px}}

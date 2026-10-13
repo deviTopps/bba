@@ -138,12 +138,11 @@ export default function Services() {
                   </div>
                   <div className="service-card-body">
                     <h3 className="service-card-title">
-                      <span className="service-card-bar" aria-hidden="true" />
                       {item.title}
                     </h3>
                     <p className="service-card-desc">{item.description}</p>
                     <span className="service-card-link">
-                      Discover more <span aria-hidden="true">›</span>
+                      Explore service <span aria-hidden="true">→</span>
                     </span>
                   </div>
                 </Link>

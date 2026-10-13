@@ -99,7 +99,7 @@ export const aboutPage = {
         title: "Integrated Advisory",
         description:
           "Bringing together assurance, finance, tax, risk, strategy and technology to address interconnected organisational challenges.",
-        image: "/stock/strategy-advisory.jpg",
+        image: "/stock/about-hero.jpg",
         icon: "bi-layers",
       },
       {

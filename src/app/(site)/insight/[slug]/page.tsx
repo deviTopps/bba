@@ -12,7 +12,7 @@ import {
   loadInsightPost,
   loadInsightPosts,
   loadRelatedInsights,
-} from "@/sanity/lib/loadInsights";
+} from "@/data/loadInsights";
 import "../../../insight.css";
 
 type PageProps = {
@@ -35,8 +35,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Insight | Bernard Bempong & Associates" };
   }
   return {
-    title: `${post.title} | Bernard Bempong & Associates`,
-    description: post.excerpt,
+    title: `${post.seoTitle || post.title} | Bernard Bempong & Associates`,
+    description: post.seoDescription || post.excerpt,
+    openGraph: { title: post.seoTitle || post.title, description: post.seoDescription || post.excerpt, type: "article", images: [post.image] },
   };
 }
 
@@ -59,7 +60,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
             </div>
             <h1 className="insight-article-title font-display">{post.title}</h1>
             <p className="insight-article-dek">{post.excerpt}</p>
-            <InsightAuthor />
+            <InsightAuthor author={post.author} />
           </div>
         </header>
         <div className="insight-article-media-wrap">
@@ -67,7 +68,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
             <div className="insight-article-media">
               <Image
                 src={post.image}
-                alt=""
+                alt={post.imageAlt || ""}
                 fill
                 className="insight-article-img"
                 sizes="(max-width: 991px) 100vw, 1280px"
@@ -79,7 +80,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
         </div>
         <div className="insight-article-body">
           <div className="container-advisory insight-article-copy">
-            <InsightBody paragraphs={post.paragraphs} body={post.body} />
+            <InsightBody paragraphs={post.paragraphs} />
             <Link href="/contact" className="insight-article-cta">
               Request a Consultation
             </Link>
@@ -116,7 +117,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
                     </div>
                     <h3 className="insight-card-title font-display">{item.title}</h3>
                     <p className="insight-card-excerpt">{item.excerpt}</p>
-                    <InsightAuthor />
+                    <InsightAuthor author={item.author} />
                   </Link>
                 ))}
               </div>

@@ -2,8 +2,8 @@
 
 import { insightsPage } from "@/data/insights";
 
-export default function InsightAuthor() {
-  const { author } = insightsPage;
+export default function InsightAuthor({ author: supplied }: { author?: { name: string; title?: string } }) {
+  const author = supplied ? { ...supplied, initials: supplied.name.split(/\s+/).map((part) => part[0]).slice(0, 2).join("") } : insightsPage.author;
   return (
     <div className="insight-author">
       <span className="insight-author-mark" aria-hidden="true">

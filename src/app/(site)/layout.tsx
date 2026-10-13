@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HomePreloader from "@/components/HomePreloader";
 
 export default function SiteLayout({
   children,
@@ -9,7 +8,6 @@ export default function SiteLayout({
 }>) {
   return (
     <>
-      <HomePreloader />
       <Navbar />
       {children}
       <Footer />

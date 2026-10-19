@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import { animate, stagger } from "animejs";
 import { prefersReducedMotion } from "@/lib/anime";

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import { contactPage } from "@/data/contact";
 import { siteData } from "@/data/site";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getSubserviceArea } from "@/data/subservices";

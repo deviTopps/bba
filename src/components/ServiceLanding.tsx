@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import AnimeReveal from "@/components/anime/AnimeReveal";
 import type { ServicePage } from "@/data/services-catalog";

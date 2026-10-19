@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import AnimeReveal from "@/components/anime/AnimeReveal";

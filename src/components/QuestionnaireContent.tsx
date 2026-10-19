@@ -1,7 +1,7 @@
 "use client";
 
 import { type FormEvent, useEffect, useMemo, useState } from "react";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import { contactPage } from "@/data/contact";
 import EnquiryNotice from "@/components/EnquiryNotice";

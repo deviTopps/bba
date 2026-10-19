@@ -2,7 +2,7 @@
 
 import { type FormEvent, useEffect, useState } from "react";
 import EnquiryNotice from "@/components/EnquiryNotice";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import { useRouter } from "next/navigation";
 import AnimeReveal from "@/components/anime/AnimeReveal";
 import { IconEnvelope, IconGlobe, IconPhone } from "@/components/icons";

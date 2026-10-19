@@ -53,7 +53,7 @@ export const siteData = {
       href: "/about",
       dropdownLinks: [
         { label: "About Us", href: "/about" },
-        { label: "Our Team", href: "/about#our-team" },
+        { label: "Our Team", href: "/team" },
         { label: "Careers", href: "/contact?subject=careers" },
       ],
     },

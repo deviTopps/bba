@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import Link from "next/link";
 import {
   AnimatePresence,

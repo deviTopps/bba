@@ -7,9 +7,9 @@ import TaglineBanner from "@/components/TaglineBanner";
 import { aboutPage } from "@/data/about";
 
 const team = [
-  { name: "Bernard Bempong", initials: "BB", qualifications: "CA (Ghana), BSc, MBA Finance – In Progress", role: "Managing Partner" },
-  { name: "Latifa Al-Razak", initials: "LA", qualifications: "ATA/UFTAA Advanced", role: "Executive Assistant" },
-  { name: "Lois Bempong", initials: "LB", qualifications: "BA, MBA, CHIRM-Level III", role: "Chief Administrative Officer" },
+  { name: "Bernard Bempong", image: "/team/bernard-bempong.jpeg", qualifications: "CA (Ghana), BSc, MBA Finance – In Progress", role: "Managing Partner" },
+  { name: "Latifa Al-Razak", image: "/team/latifa-al-razak.jpeg", qualifications: "ATA/UFTAA Advanced", role: "Executive Assistant" },
+  { name: "Lois Bempong", image: "/team/lois-bempong.jpeg", qualifications: "BA, MBA, CHIRM-Level III", role: "Chief Administrative Officer" },
 ];
 
 export default function AboutContent() {
@@ -189,10 +189,19 @@ export default function AboutContent() {
           <div className="about-team-grid">
             {team.map((person) => (
               <article className="about-team-card" key={person.name}>
-                <span className="about-team-initials" aria-hidden="true">{person.initials}</span>
-                <h3>{person.name}</h3>
-                <p className="about-team-role">{person.role}</p>
-                <p className="about-team-qualifications">{person.qualifications}</p>
+                <div className="about-team-portrait">
+                  <Image
+                    src={person.image}
+                    alt={person.name}
+                    fill
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="about-team-details">
+                  <h3>{person.name}</h3>
+                  <p className="about-team-role">{person.role}</p>
+                  <p className="about-team-qualifications">{person.qualifications}</p>
+                </div>
               </article>
             ))}
           </div>

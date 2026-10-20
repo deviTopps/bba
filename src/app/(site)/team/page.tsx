@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 
 const team = [
   { name: "Bernard Bempong", image: "/team/bernard-bempong.jpeg", qualifications: "CA (Ghana), BSc, MBA Finance – In Progress", role: "Managing Partner" },
-  { name: "Latifa Al-Razak", image: "/team/latifa-al-razak.jpeg", qualifications: "ATA/UFTAA Advanced", role: "Executive Assistant" },
-  { name: "Lois Bempong", image: "/team/lois-bempong.jpeg", qualifications: "BA, MBA, CHIRM-Level III", role: "Chief Administrative Officer" },
+  { name: "Lois Bempong", image: "/team/lois-bempong.jpeg", qualifications: "BA, MBA, CHIRM-Level III", role: "Executive Director" },
+  { name: "Francis Atteh", image: "/team/francis-atteh.jpeg", qualifications: "CA, BSc", role: "Partner" },
+  { name: "Latifah Al-Razak", image: "/team/latifa-al-razak.jpeg", qualifications: "ATA/UFTAA Advanced", role: "Executive Assistant" },
 ];
 
 export default function TeamPage() {
@@ -38,13 +39,13 @@ export default function TeamPage() {
                     src={person.image}
                     alt={person.name}
                     fill
-                    sizes="(max-width: 767px) 100vw, 33vw"
+                    sizes="(max-width: 767px) 100vw, 25vw"
                   />
                 </div>
                 <div className="about-team-details">
                   <h3>{person.name}</h3>
                   <p className="about-team-role">{person.role}</p>
-                  <p className="about-team-qualifications">{person.qualifications}</p>
+                  {person.qualifications && <p className="about-team-qualifications">{person.qualifications}</p>}
                 </div>
               </article>
             ))}

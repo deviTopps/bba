@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const team = [
   { name: "Bernard Bempong", image: "/team/bernard-bempong.jpeg", qualifications: "CA (Ghana), BSc, MBA Finance – In Progress", role: "Managing Partner" },
   { name: "Lois Bempong", image: "/team/lois-bempong.jpeg", qualifications: "BA, MBA, CHIRM-Level III", role: "Executive Director" },
-  { name: "Francis Atteh", image: "/team/francis-atteh.jpeg", qualifications: "CA, BSc", role: "Partner" },
+  { name: "Francis Atteh", image: "/team/francis-atteh.jpeg", qualifications: "CA (Ghana), BSc-Accounting, CIA in Progress", role: "Partner" },
   { name: "Latifah Al-Razak", image: "/team/latifa-al-razak.jpeg", qualifications: "ATA/UFTAA Advanced", role: "Executive Assistant" },
 ];
 

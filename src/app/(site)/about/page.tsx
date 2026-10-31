@@ -3,7 +3,7 @@ import AboutContent from "@/components/AboutContent";
 import "../../about.css";
 
 export const metadata: Metadata = {
-  title: "About Us | Bernard Bempong & Associates",
+  title: "About Us | BBA Advisors",
   description:
     "A Ghana-based firm applying international audit, tax and advisory discipline to GRA compliance, public financial management, ERP and internal controls.",
 };

@@ -23,10 +23,10 @@ export default function Footer() {
           <div className="footer-left">
             <Link href="/" className="footer-logo-link" aria-label={brand.name}>
               <Image
-                src="/brand/BBA.svg"
+                src="/brand/bba-advisors.png"
                 alt={brand.name}
                 width={240}
-                height={72}
+                height={78}
                 className="brand-logo brand-logo-footer"
               />
             </Link>
@@ -60,8 +60,8 @@ export default function Footer() {
             The information on this website is provided for general guidance and
             does not constitute audit, tax, legal, investment or other professional
             advice. The appropriate scope and advice depend on the client’s facts,
-            applicable laws and engagement terms. Please contact Bernard Bempong &
-            Associates before acting on any matter described on the website.
+            applicable laws and engagement terms. Please contact BBA Advisors
+            before acting on any matter described on the website.
           </p>
         </section>
       </div>

@@ -3,9 +3,9 @@ import ContactContent from "@/components/ContactContent";
 import "../../contact.css";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Bernard Bempong & Associates",
+  title: "Contact Us | BBA Advisors",
   description:
-    "Email, call or visit Bernard Bempong & Associates. info@bernardbempong.com",
+    "Email, call or visit BBA Advisors. info@bernardbempong.com",
 };
 
 export default function ContactPage() {

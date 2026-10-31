@@ -5,7 +5,7 @@ import "../../contact.css";
 import "../../service.css";
 
 export const metadata: Metadata = {
-  title: "Tax and Risk Assessment | Bernard Bempong & Associates",
+  title: "Tax and Risk Assessment | BBA Advisors",
   description: assessment.description,
 };
 

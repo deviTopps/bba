@@ -57,5 +57,5 @@ export const serviceCallsToAction = [
   }
 ];
 
-export const formConsent = "By submitting this form, you consent to Bernard Bempong & Associates using the information provided to review and respond to your enquiry. Please do not submit highly confidential, privileged or sensitive information until BBA has confirmed the appropriate communication arrangements.";
+export const formConsent = "By submitting this form, you consent to BBA Advisors using the information provided to review and respond to your enquiry. Please do not submit highly confidential, privileged or sensitive information until BBA has confirmed the appropriate communication arrangements.";
 export const engagementNotice = "Submitting an enquiry, requesting a consultation or receiving preliminary information from BBA does not create a professional engagement. Services will commence only after BBA has completed its client-acceptance procedures and the parties have agreed and signed the applicable engagement documentation.";

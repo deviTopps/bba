@@ -3,7 +3,7 @@ import QuestionnaireContent from "@/components/QuestionnaireContent";
 import "../questionnaire.css";
 
 export const metadata: Metadata = {
-  title: "Client Questionnaire | Bernard Bempong & Associates",
+  title: "Client Questionnaire | BBA Advisors",
   description: "Client acceptance and initial fee-scoping questionnaire.",
 };
 

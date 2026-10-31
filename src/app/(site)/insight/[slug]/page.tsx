@@ -32,10 +32,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const post = await loadInsightPost(slug);
   if (!post) {
-    return { title: "Insight | Bernard Bempong & Associates" };
+    return { title: "Insight | BBA Advisors" };
   }
   return {
-    title: `${post.seoTitle || post.title} | Bernard Bempong & Associates`,
+    title: `${post.seoTitle || post.title} | BBA Advisors`,
     description: post.seoDescription || post.excerpt,
     openGraph: { title: post.seoTitle || post.title, description: post.seoDescription || post.excerpt, type: "article", images: [post.image] },
   };

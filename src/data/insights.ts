@@ -44,7 +44,7 @@ export const insightsPage = {
   },
   author: {
     name: "Bernard Bempong",
-    title: "Bernard Bempong & Associates",
+    title: "BBA Advisors",
     initials: "BB",
   },
   posts: [

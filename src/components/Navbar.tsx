@@ -171,10 +171,10 @@ export default function Navbar() {
             aria-label={siteData.brand.name}
           >
             <Image
-              src={solid ? "/brand/BBA.svg" : "/brand/BBA-white.svg"}
+              src={solid ? "/brand/bba-advisors.png" : "/brand/bba-advisors-light.png"}
               alt={siteData.brand.name}
               width={220}
-              height={56}
+              height={72}
               className="brand-logo brand-logo-nav"
               priority
             />

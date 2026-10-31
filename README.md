@@ -1,6 +1,6 @@
 # Advisory — African Professional Services
 
-Next.js + Bootstrap 5 site for Bernard Bempong & Associates.
+Next.js + Bootstrap 5 site for BBA Advisors.
 
 ## Quick start
 

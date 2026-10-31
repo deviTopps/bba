@@ -9,7 +9,7 @@ export const aboutPage = {
     image: "/stock/about-intro.jpg",
     heading: "What We Do",
     paragraphs: [
-      "Bernard Bempong & Associates is a firm of Chartered Accountants and Management Consultants. We help organisations strengthen financial discipline, improve performance and navigate complex transformation by integrating assurance, finance, tax, risk, technology and strategy.",
+      "BBA Advisors is a firm of Chartered Accountants and Management Consultants. We help organisations strengthen financial discipline, improve performance and navigate complex transformation by integrating assurance, finance, tax, risk, technology and strategy.",
       "Our work spans public institutions, private enterprises and development organisations. We support leaders in modernising financial management, strengthening governance and controls, protecting revenue, improving operations and building the capabilities required to sustain change.",
     ],
     cta: "Request a Consultation",
@@ -86,7 +86,7 @@ export const aboutPage = {
     title: "Our Strategic Position",
     heading: "Four forces shaping the future of organisations and professional services",
     intro:
-      "Bernard Bempong & Associates operates at the intersection of four forces transforming how businesses and public institutions govern, make decisions, modernise operations and create value.",
+      "BBA Advisors operates at the intersection of four forces transforming how businesses and public institutions govern, make decisions, modernise operations and create value.",
     pillars: [
       {
         title: "Digital Transformation and Governance",

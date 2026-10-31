@@ -1,6 +1,6 @@
 export const siteData = {
   brand: {
-    name: "Bernard Bempong & Associates",
+    name: "BBA Advisors",
     shortName: "BBA",
     tagline: "Chartered Accountants & Management Consultant",
     taglineLockup: {
@@ -203,7 +203,7 @@ export const siteData = {
     heading: "What Sets Us Apart",
     marketLabel: "Market Positioning",
     marketBody:
-      "Bernard Bempong & Associates is positioned as a multidisciplinary professional services firm supporting businesses and public institutions with complex financial, governance and transformation priorities. We combine professional discipline across audit, tax, risk, finance and advisory with practical institutional insight and technology-enabled implementation. This integrated approach enables us to address regulatory compliance, public financial management, revenue assurance, internal controls and enterprise systems through one coordinated relationship.",
+      "BBA Advisors is positioned as a multidisciplinary professional services firm supporting businesses and public institutions with complex financial, governance and transformation priorities. We combine professional discipline across audit, tax, risk, finance and advisory with practical institutional insight and technology-enabled implementation. This integrated approach enables us to address regulatory compliance, public financial management, revenue assurance, internal controls and enterprise systems through one coordinated relationship.",
     competitiveLabel: "Competitive Positioning",
     items: [
       {
@@ -305,12 +305,12 @@ export const siteData = {
   footer: {
     tagline: "Chartered Accountants & Management Consultant",
     legal:
-      "Bernard Bempong & Associates is a firm of Chartered Accountants and Management Consultants providing services across Audit, Assurance and Risk Management; Tax and Revenue Advisory; Financial Advisory and Transaction Services; Management Consulting and Institutional Reform; Technology and Digital Transformation; Artificial Intelligence and Data Analytics; and Sustainability, ESG & Development Finance. © 2026 Bernard Bempong & Associates. All rights reserved.",
+      "BBA Advisors is a firm of Chartered Accountants and Management Consultants providing services across Audit, Assurance and Risk Management; Tax and Revenue Advisory; Financial Advisory and Transaction Services; Management Consulting and Institutional Reform; Technology and Digital Transformation; Artificial Intelligence and Data Analytics; and Sustainability, ESG & Development Finance. © 2026 BBA Advisors. All rights reserved.",
     blurb:
       "Ghana based professional services in audit, tax, advisory and technology, serving African institutions.",
     services: ["Strategy", "Finance & Tax", "Legal Advisory", "Risk & Audit"],
     industries: ["Fintech", "Energy", "Mining", "Agribusiness", "Public Sector"],
     contact: ["info@bernardbempong.com"],
-    copyright: "Bernard Bempong & Associates is a firm of Chartered Accountants and Management Consultants providing services across Audit, Assurance and Risk Management; Tax and Revenue Advisory; Financial Advisory and Transaction Services; Management Consulting and Institutional Reform; Technology and Digital Transformation; Artificial Intelligence and Data Analytics; and Sustainability, ESG & Development Finance. © 2026 Bernard Bempong & Associates. All rights reserved.",
+    copyright: "BBA Advisors is a firm of Chartered Accountants and Management Consultants providing services across Audit, Assurance and Risk Management; Tax and Revenue Advisory; Financial Advisory and Transaction Services; Management Consulting and Institutional Reform; Technology and Digital Transformation; Artificial Intelligence and Data Analytics; and Sustainability, ESG & Development Finance. © 2026 BBA Advisors. All rights reserved.",
   },
 } as const;

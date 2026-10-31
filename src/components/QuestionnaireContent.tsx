@@ -135,10 +135,10 @@ export default function QuestionnaireContent() {
             <span>Back</span>
           </Link>
           <Image
-            src="/brand/BBA.svg"
-            alt="Bernard Bempong & Associates"
+            src="/brand/bba-advisors.png"
+            alt="BBA Advisors"
             width={190}
-            height={57}
+            height={62}
             className="questionnaire-header-logo"
             priority
           />

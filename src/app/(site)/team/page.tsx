@@ -4,15 +4,16 @@ import GeneralCallout from "@/components/GeneralCallout";
 import "../../about.css";
 
 export const metadata: Metadata = {
-  title: "Our Team | Bernard Bempong & Associates",
-  description: "Meet the people behind Bernard Bempong & Associates, including our managing partner and administrative leadership.",
+  title: "Our Team | BBA Advisors",
+  description: "Meet the people behind BBA Advisors, including our managing partner and administrative leadership.",
 };
 
 const team = [
-  { name: "Bernard Bempong", image: "/team/bernard-bempong.jpeg", qualifications: "CA (Ghana), BSc, MBA Finance – In Progress", role: "Managing Partner" },
+  { name: "Bernard Bempong", image: "/team/bernard-bempong.png", qualifications: "CA (Ghana), BSc, MBA Finance – In Progress", role: "Managing Partner" },
   { name: "Lois Bempong", image: "/team/lois-bempong.jpeg", qualifications: "BA, MBA, CHIRM-Level III", role: "Executive Director" },
-  { name: "Francis Atteh", image: "/team/francis-atteh.jpeg", qualifications: "CA (Ghana), BSc-Accounting, CIA in Progress", role: "Partner" },
+  { name: "Francis Atteh", image: "/team/francis-atteh.png", qualifications: "CA (Ghana), BSc-Accounting, CIA in Progress", role: "Partner" },
   { name: "Latifah Al-Razak", image: "/team/latifa-al-razak.jpeg", qualifications: "ATA/UFTAA Advanced", role: "Executive Assistant" },
+  { name: "Emmanuel Ofori Boadi", image: "/team/emmanuel-ofori-boadi.png", qualifications: "BSc, AWS Cloud Practitioner, ML, Project Management", role: "Senior, Artificial Intelligence & Data Analytics" },
 ];
 
 export default function TeamPage() {

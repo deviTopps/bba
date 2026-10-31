@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = getServicePage(slug);
   const area = getSubserviceArea(slug);
   if (!service) {
-    return { title: "Services | Bernard Bempong & Associates" };
+    return { title: "Services | BBA Advisors" };
   }
   return {
     title: `${area?.title ?? service.title} in Ghana | BBA`,

@@ -4,9 +4,9 @@ import { contactPage } from "@/data/contact";
 import "../../insight.css";
 
 export const metadata: Metadata = {
-  title: "Privacy & Cookies | Bernard Bempong & Associates",
+  title: "Privacy & Cookies | BBA Advisors",
   description:
-    "Questions about privacy and cookies at Bernard Bempong & Associates.",
+    "Questions about privacy and cookies at BBA Advisors.",
 };
 
 export default function PrivacyPage() {

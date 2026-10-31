@@ -6,9 +6,9 @@ import { loadInsightPosts } from "@/data/loadInsights";
 import "../../insight.css";
 
 export const metadata: Metadata = {
-  title: "Insight | Bernard Bempong & Associates",
+  title: "Insight | BBA Advisors",
   description:
-    "Audit, tax, public financial management, ERP and ESG writing from Bernard Bempong & Associates.",
+    "Audit, tax, public financial management, ERP and ESG writing from BBA Advisors.",
 };
 
 export const revalidate = 60;

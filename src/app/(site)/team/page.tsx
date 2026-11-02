@@ -40,7 +40,7 @@ export default function TeamPage() {
                     src={person.image}
                     alt={person.name}
                     fill
-                    sizes="(max-width: 767px) 100vw, 25vw"
+                    sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 25vw"
                   />
                 </div>
                 <div className="about-team-details">

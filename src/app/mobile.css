@@ -1,0 +1,91 @@
+/* Shared responsive composition. Route styles are deliberately scoped below. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+@media (max-width: 991.98px) {
+  :root { --section-y: 3.5rem; }
+  .container-advisory { width: min(calc(100% - 2.5rem), var(--container-max)); }
+  .nav-panel.is-open {
+    max-height: calc(100dvh - 4.5rem - env(safe-area-inset-top));
+    overscroll-behavior: contain;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    scrollbar-gutter: stable;
+  }
+  .nav-mobile-service-details summary {
+    min-height: 44px;
+    padding: .7rem .25rem;
+    color: var(--color-navy);
+    font-size: .875rem;
+    cursor: pointer;
+  }
+  .nav-mobile-service-details ul { padding-left: 1rem; list-style: none; }
+  .nav-mobile-sub a { min-height: 44px; }
+  .about-page .about-team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .approach-section, .home-page .positioning-hero,
+  .home-page .tagline-banner { min-height: 0; }
+  .home-page .tagline-banner { padding-block: 5rem; }
+  .home-page .approach-phase { opacity: 1; transform: none; }
+}
+
+@media (max-width: 767.98px) {
+  :root { --section-y: 3rem; }
+  body { font-size: 1rem; }
+  .section-lg { padding-block: 3.5rem; }
+  .container-advisory { width: calc(100% - 2rem); }
+  main :where(h1, h2, h3, p, a, label, li) { overflow-wrap: anywhere; }
+  main :where(h1, h2, h3) { text-wrap: balance; }
+  main :where(input, select, textarea) { max-width: 100%; font-size: 16px; }
+  main :where(input:not([type=checkbox]):not([type=radio]), select, button) { min-height: 44px; }
+  main :where(fieldset, form, [class$='-grid'] > *, [class$='-layout'] > *) { min-width: 0; }
+  .btn-pill { min-height: 48px; white-space: normal; text-align: center; }
+
+  /* Flow-based hero grows with its copy, including landscape and browser zoom. */
+  .hero.hero-akor { min-height: 100svh; display: flex; align-items: flex-end; }
+  .hero .hero-inner {
+    position: relative;
+    padding: calc(7rem + env(safe-area-inset-top)) 1rem 6.5rem;
+  }
+  .hero .hero-title { font-size: clamp(2rem, 8.5vw, 3.5rem); line-height: 1.08; }
+  .hero .hero-desc { font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; }
+  .hero .hero-actions { gap: .75rem; }
+  .hero .hero-cta-green { width: 100%; max-width: 24rem; min-height: 50px; padding: .9rem 1rem; }
+  .hero .hero-link-learn { display: inline-flex; align-items: center; }
+  .hero .hero-nav-btn { width: 44px; height: 44px; }
+  .hero .hero-dot { min-width: 24px; min-height: 24px; border-radius: 50%; background-clip: content-box; padding: 8px; }
+  .hero .hero-dot.is-active { min-width: 36px; border-radius: 999px; }
+  .hero .hero-controls { bottom: max(1rem, env(safe-area-inset-bottom)); }
+
+  .about-page .about-hero, .contact-page .contact-hero, .insight-page .insight-hero,
+  .svc-page .svc-hero { min-height: 0; padding: 8rem 1rem 3.5rem; }
+  .about-page .about-hero-title, .contact-page .contact-hero-title,
+  .insight-page .insight-hero-title, .svc-page .svc-title {
+    white-space: normal; font-size: clamp(2.25rem, 9vw, 3.5rem); line-height: 1.08;
+  }
+  .svc-page .svc-copy .container-advisory { width: calc(100% - 2rem); }
+  .about-page .about-team-grid { gap: 1rem; }
+  .about-page .about-team-details { padding: 1.15rem; }
+  .about-page .about-team-card h3 { font-size: 1.2rem; }
+  .questionnaire-page .questionnaire-form { padding: 1.25rem; }
+  .questionnaire-page .questionnaire-header-inner { gap: 1rem; }
+  .questionnaire-page .questionnaire-header-back { font-size: .8rem; }
+  .questionnaire-page .questionnaire-conditional { margin-top: 2rem; padding-top: 2rem; }
+  .site-footer .container-advisory.footer-inner { padding-inline: 0; }
+  .site-footer .footer-email { overflow-wrap: anywhere; font-size: clamp(1rem, 4.5vw, 1.4rem); }
+  .site-footer .footer-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: .25rem 1rem; }
+  .site-footer .footer-nav-link { display: flex; align-items: center; min-height: 44px; }
+}
+
+@media (max-width: 479.98px) {
+  .about-page .about-team-grid { grid-template-columns: 1fr; }
+  .editorial-actions { flex-direction: column; align-items: stretch; }
+  .editorial-actions a { justify-content: center; text-align: center; }
+  .tagline-banner .tagline-banner-inner { padding-inline: 1rem; }
+  .tagline-banner .tagline-banner-lockup { font-size: clamp(2rem, 10vw, 3rem); line-height: 1.05; }
+}
+
+@media (max-width: 991.98px) and (max-height: 500px) {
+  .hero.hero-akor { min-height: 0; }
+  .hero .hero-inner { position: relative; padding: 7rem 1.5rem 6rem; }
+}

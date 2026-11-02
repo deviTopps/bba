@@ -36,6 +36,36 @@ export default function Navbar() {
   const megaOpen = Boolean(openMega);
   const megaTriggerRef = useRef<HTMLButtonElement>(null);
   const megaPanelRef = useRef<HTMLDivElement>(null);
+  const mobilePanelRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const panel = mobilePanelRef.current;
+    if (!panel) return;
+    focusablesIn(panel)[0]?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        setOpenMega(null);
+        mobileToggleRef.current?.focus();
+      }
+      if (event.key !== "Tab") return;
+      const items = [...focusablesIn(panel), mobileToggleRef.current].filter(
+        (item): item is HTMLElement => Boolean(item && item.getClientRects().length)
+      );
+      const index = items.indexOf(document.activeElement as HTMLElement);
+      if (event.shiftKey && index <= 0) {
+        event.preventDefault();
+        items[items.length - 1]?.focus();
+      } else if (!event.shiftKey && index === items.length - 1) {
+        event.preventDefault();
+        items[0]?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   const megaItems = siteData.navigation.filter(
     (item): item is MegaItem => "mega" in item && Boolean(item.mega)
@@ -180,7 +210,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className={`nav-panel${open ? " is-open" : ""}`} id="mainNav">
+          <div ref={mobilePanelRef} className={`nav-panel${open ? " is-open" : ""}`} id="mainNav">
             <ul className="nav-list">
               {siteData.navigation.map((item) => {
                 const isMega = "mega" in item && item.mega;
@@ -281,6 +311,7 @@ export default function Navbar() {
             </Link>
 
             <button
+              ref={mobileToggleRef}
               className={`nav-toggle${open ? " is-open" : ""}`}
               type="button"
               aria-controls="mainNav"

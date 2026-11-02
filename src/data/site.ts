@@ -303,7 +303,7 @@ export const siteData = {
     },
   ],
   footer: {
-    tagline: "Chartered Accountants & Management Consultant",
+    tagline: "Chartered Accountants & Management Consultants",
     legal:
       "BBA Advisors is a firm of Chartered Accountants and Management Consultants providing services across Audit, Assurance and Risk Management; Tax and Revenue Advisory; Financial Advisory and Transaction Services; Management Consulting and Institutional Reform; Technology and Digital Transformation; Artificial Intelligence and Data Analytics; and Sustainability, ESG & Development Finance. © 2026 BBA Advisors. All rights reserved.",
     blurb:

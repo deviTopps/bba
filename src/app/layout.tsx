@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { aspiraWide, elvonGrotesk, praktika } from "./fonts";
 import "./globals.css";
 import "./sections.css";
+import "./mobile.css";
 
 export const metadata: Metadata = {
   title: "BBA Advisors | Chartered Accountants & Management Consultant",

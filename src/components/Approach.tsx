@@ -11,7 +11,7 @@ export default function Approach() {
 
   useEffect(() => {
     const root = sectionRef.current;
-    if (!root || prefersReducedMotion()) return;
+    if (!root || prefersReducedMotion() || window.matchMedia("(max-width: 991.98px)").matches) return;
 
     const steps = root.querySelectorAll<HTMLElement>(".approach-phase");
     if (!steps.length) return;

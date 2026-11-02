@@ -1,6 +1,5 @@
 import Image from "@/components/SiteImage";
 import Link from "next/link";
-import { contactPage } from "@/data/contact";
 import { siteData } from "@/data/site";
 
 const footerNav = [
@@ -14,7 +13,7 @@ const footerNav = [
 
 export default function Footer() {
   const { footer, brand } = siteData;
-  const email = contactPage.email;
+  const email = "Info@bba.com.gh";
 
   return (
     <footer className="site-footer" id="site-footer">
